@@ -11,4 +11,8 @@ export const menuData = [
         title : 'Tokenomics',
         link : 'tokenomics' 
     },
+    {
+        title : 'Road Map',
+        link : 'roadmap' 
+    },
 ]

@@ -37,8 +37,6 @@ const About = ({ lightBg, id}) => {
                 <MoveStuffAround />
                 <AboutContent>
                     <TitleSubtitle {...aboutData}/>
-                    
-                    <Button to="/" primary='true'>About Button</Button>
                 </AboutContent>
             </AboutContainer>
         </>

@@ -2,10 +2,10 @@ import React, {useState, useRef, useEffect} from 'react'
 import styled, {css} from 'styled-components/macro'
 import { Button } from './Button';
 import {IoMdArrowRoundForward} from 'react-icons/io';
-import {IoArrowForward, IoArrowBack} from 'react-icons/io5';
-import Herologo from '../images/logo/logo.png';
+import {IoArrowForward, IoArrowBack, IoLockOpen} from 'react-icons/io5';
+import Herologo from '../images/logo/logo-img.png';
 import IntroBg from '../images/hero/10.jpg';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const HeroSection = styled.section`
     height: 100vh;
@@ -48,7 +48,7 @@ const HeroSlider = styled.div`
     display: flex;
     align-items: center;
     padding: 100px;
-    justify-content: ${({ justify }) => (justify ? 'left' : 'center') };
+    justify-content: ${({ justify }) => (justify ? 'left' : 'space-between') };
 
     &::before {
         content: '';
@@ -79,6 +79,27 @@ const HeroImage = styled(motion.img)`
     height: 100vh;
     object-fit: cover;
 `;
+const HeroText = styled(motion.h1)`
+    position: absolute;
+    color: #fff;
+    font-size: 300px;
+    z-index: 10;
+    display: flex;
+    opacity: 0.1;
+    @media screen and (max-width: 1024px){
+        font-size: 180px;
+    }
+    @media screen and (max-width: 962px){
+        font-size: 100px;
+    }
+    @media screen and (max-width: 540px){
+        bottom: 0;
+    }
+    @media screen and (max-width: 320px){
+        bottom: 0;
+        font-size: 60px;
+    }
+`;
 
 const HeroContent = styled.div`
     position: relative;
@@ -96,18 +117,14 @@ const Quotes = styled(motion.h1)`
     font-weight: 400;
     text-transform: capitalize;
     text-shadow: 0px 0px 20px rgba(0,0,0, 0.4);
-    text-align: left;
+    text-align: ${({left}) => (left ? 'left' : 'center')};
     margin-bottom: 0.8rem;
-`
+`;
 
 const Author = styled(motion.p)`
     margin-bottom: 1.2rem;
     text-shadow: 0px 0px 20px rgba(0,0,0, 0.4);
-`
-
-const BtnWrap = styled(motion.div)`
-
-`
+`;
 
 const Arrow = styled(IoMdArrowRoundForward)`
     margin-left: 0.5rem;
@@ -128,10 +145,26 @@ const SliderButtons = styled.div`
     }
 `;
 
+const LogoWrapper = styled(motion.div)`
+
+`
+
 const Forsetilogo = styled(motion.img)`
     display: flex;
     align-items: center;
+    margin-bottom: 0.8rem;
+    width: 200px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-shadow:  0px 0px 15px 3px #fff;
 `;
+
+const Motto = styled(motion.h2)`
+    font-weight: 400;
+    text-shadow:
+      0 0 21px #fff,
+      0 0 100px #317481;
+`
 
 const arrowButtons = css`
     width: 50px;
@@ -159,6 +192,84 @@ const NextArrow = styled(IoArrowForward)`
     ${arrowButtons}
 `;
 
+// Animation 
+const slidingAnimation = {
+    beginSlide : {
+        opacity: 0,
+    },
+    endSlide : {
+        opacity: 1,
+        transition: {
+            duration : 1
+        }
+    },
+    exit : {
+        y:-1000,
+        transition: {
+            duration: 1
+        }
+    }
+}
+
+const WordAnimation = {
+    begin : {
+        opacity: 0,
+    },
+    end : {
+        opacity: 1,
+        transition: {
+            duration: 2,
+            delay: 1
+        }
+    },
+    exit: {
+        x:-1000,
+        transition: {
+            duration: 1
+        }
+    }
+}
+
+const logoAnimation = {
+    begin : {
+        opacity:0, 
+        y:-300
+    },
+    end : {
+        opacity:1, 
+        y:0,
+        transition: {
+            duration: 2,
+        },
+    }
+}
+
+const sentence = {
+    hidden : {opacity : 0.1},
+    visible: {
+        opacity: 0.5,
+        transition: {
+            delay: 0.5,
+            staggerChildren: 0.08,
+        },
+    },
+}
+
+const letter = {
+    hidden: { opacity: 0.5, y:-70 },
+    visible: {
+        opacity: 0.1,
+        y: 0,
+        transition: {
+            repeat: Infinity,
+            repeatType : "mirror",
+            duration: 2
+        }
+    },
+}
+
+
+// Slide Functionality
 function Hero({slides}) {
     const [current, setCurrent] = useState(0);
     const length = slides.length; 
@@ -169,13 +280,13 @@ function Hero({slides}) {
     //         setCurrent(current => (current ===length - 1 ? 0 : current + 1))
     //     }
 
-    //     timeout.current = setTimeout(nextSlide, 10000)
+    //     timeout.current = setTimeout(nextSlide, 15000)
 
     //     return function () {
     //         if(timeout.current) {
     //             clearTimeout(timeout.current);
     //         }
-    //     }git remote add origin https://github.com/rifqif-socketspace/forseti.git
+    //     }
     // }, [current, length])
 
     const nextSlide = () => {
@@ -196,24 +307,66 @@ function Hero({slides}) {
         return null
     }
 
+
+    const companyName ="Forseti"
+
     if (current === length-length){
         return (
             <HeroSection>
                 <HeroWrapper>
                     <HeroSlide>
                         <HeroSlider>
-                            <HeroImage transition={{duration:1}} initial={{opacity:0}} animate={{opacity:1}} src={IntroBg} />
+                            <HeroText
+                            variants={sentence}
+                            initial="hidden"
+                            animate="visible"
+                            >
+                                
+                                {companyName.split("").map((char, index) => {
+                                    return (
+                                        <motion.span key={char + "-" + index} variants={letter}>
+                                            {char}
+                                        </motion.span>
+                                    )
+                                })}
+                            </HeroText>
+                            <HeroImage 
+                            transition={{duration:1}}
+                            variants ={slidingAnimation} 
+                            initial ="beginSlide" 
+                            animate="endSlide"
+                            src={IntroBg} />
+                            <HeroContent >
+                                <Quotes 
+                                transition={{duration:1}}
+                                variants ={slidingAnimation} 
+                                initial ="beginSlide" 
+                                animate="endSlide"
+                                >
+                                </Quotes>
+                            </HeroContent>
                             <HeroContent>
-                                <Forsetilogo transition={{delay : 1, duration:2}} initial={{opacity:0, y:-300}} animate={{opacity:1, y:0}} src={Herologo} />
-                                <Author transition={{delay: 3, duration:2}} initial={{opacity:0}} animate={{opacity:1}}>Coming Soon</Author>
-                                <BtnWrap transition={{delay: 3, duration:2}} initial={{opacity:0}} animate={{opacity:1}}>
-                                    <Button 
-                                    to="/" 
-                                    primary='true'
-                                    css={`max-width:160px;`}>
-                                    Coming Soon  <Arrow />
-                                    </Button>
-                                </BtnWrap>
+                                <LogoWrapper
+                                variants={logoAnimation}
+                                initial="begin" 
+                                animate="end">
+                                    <Forsetilogo
+                                    initial={{y:0}}
+                                    animate={{rotateZ: 360, y: -25 }}
+                                    transition={{delay: 3, duration: 3, 
+                                        repeat: Infinity,
+                                        repeatType : "mirror",}}
+                                    
+                                    src={Herologo} />
+                                </LogoWrapper>
+                                
+                                    <Motto 
+                                    
+                                    variants ={slidingAnimation} 
+                                    initial ="beginSlide" 
+                                    animate="endSlide"
+                                    >"Future Humanity Shield"
+                                    </Motto>
                             </HeroContent>
                         </HeroSlider>
                     </HeroSlide>
@@ -237,24 +390,33 @@ function Hero({slides}) {
             {slides.map((slide, index) => {
                 return (
                     <HeroSlide key={index}>
+                        <AnimatePresence>
                         {index === current && (
                         <HeroSlider justify='true'>
-                            <HeroImage transition={{duration:1}} initial={{opacity:0}} animate={{opacity:1}} src={slide.image} alt={slide.alt}/>
+                            <HeroImage 
+                            variants ={slidingAnimation} 
+                            initial ="beginSlide" 
+                            animate="endSlide"
+                            exit="exit"
+                            src={slide.image} alt={slide.alt}/>
                             <HeroContent align='true'>
-                                <Quotes transition={{duration:2}} initial={{opacity:0}} animate={{opacity:1}}>{slide.quotes}</Quotes>
-                                <Author transition={{duration:2}} initial={{opacity:0}} animate={{opacity:1}}>{slide.author}</Author>
-                                <BtnWrap transition={{duration:2}} initial={{opacity:0}} animate={{opacity:1}}>
-                                    <Button 
-                                    to={slide.path} 
-                                    primary='true'
-                                    css={`max-width:160px;`}>
-                                        {slide.label}
-                                        <Arrow />
-                                    </Button>
-                                </BtnWrap>
+                                <Quotes 
+                                left="false" 
+                                variants ={WordAnimation} 
+                                initial ="begin" 
+                                animate="end"
+                                exit="exit">
+                                    {slide.quotes}
+                                </Quotes>
+                                <Author 
+                                variants ={WordAnimation} 
+                                initial ="begin" 
+                                animate="end"
+                                exit="exit">{slide.author}</Author>       
                             </HeroContent>
                         </HeroSlider>
                         )}
+                        </AnimatePresence>
                     </HeroSlide>
                 );
             })};
