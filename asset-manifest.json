@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/forseti-web/static/js/main.1511e96b.chunk.js",
-    "main.js.map": "/forseti-web/static/js/main.1511e96b.chunk.js.map",
+    "main.js": "/forseti-web/static/js/main.71539649.chunk.js",
+    "main.js.map": "/forseti-web/static/js/main.71539649.chunk.js.map",
     "runtime-main.js": "/forseti-web/static/js/runtime-main.9c581a8a.js",
     "runtime-main.js.map": "/forseti-web/static/js/runtime-main.9c581a8a.js.map",
     "static/js/2.8725aabe.chunk.js": "/forseti-web/static/js/2.8725aabe.chunk.js",
@@ -25,6 +25,6 @@
   "entrypoints": [
     "static/js/runtime-main.9c581a8a.js",
     "static/js/2.8725aabe.chunk.js",
-    "static/js/main.1511e96b.chunk.js"
+    "static/js/main.71539649.chunk.js"
   ]
 }
