@@ -37,16 +37,19 @@ const CardH2 = styled.h2`
 const CardP = styled.p`
     font-size: 1rem;
     color: #fff;
-    text-align: center;
+    text-align: justify;
 `
 
-export const Cards = () => {
+// Jenis Cards
+
+export const Cards = ({title, description}) => {
+
     return (
         <>
             <Card>
-                <CardH2>Card Title</CardH2>
+                <CardH2>{title}</CardH2>
                 <Border />
-                <CardP>Card Paragraph</CardP>
+                <CardP>{description}</CardP>
             </Card>
         </>
     )

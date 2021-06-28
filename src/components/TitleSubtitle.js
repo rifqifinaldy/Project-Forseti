@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
 
-const TextWrapper = styled.div`
+export const TextWrapper = styled.div`
     /* max-width: 540px; */
     padding-top: 0;
     padding-bottom: 60px;
 `
 
-const Description = styled.p`
+export const Description = styled.p`
     color:#fff;
     text-align: center;
     font-size: 16px;
@@ -18,7 +18,7 @@ const Description = styled.p`
     margin-bottom: 16px;
 `
 
-const Header = styled.h1`
+export const Header = styled.h1`
     margin-bottom: 18px;
     font-size: 48px;
     line-height: 1.1;
@@ -31,7 +31,7 @@ const Header = styled.h1`
     }
 `
 
-const Subtitle = styled.p`
+export const Subtitle = styled.p`
     opacity : 0.6;
     margin-bottom: 12px;
     font-size: 24px;
@@ -55,19 +55,11 @@ const TitleSubtitle = ({header, subtitle, description}) => {
     return (
         <>
         <TextWrapper>
-            <Header>
-                {header}
-            </Header>
-
             <Subtitle>
-                {subtitle}
             </Subtitle>
-
             <Border>
             </Border>
-
             <Description>
-                {description}
             </Description>
         </TextWrapper>
         </>

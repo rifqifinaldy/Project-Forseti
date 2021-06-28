@@ -1,16 +1,25 @@
 import React, {useState} from 'react';
 import Navbar from './components/Navbar';
 import GlobalStyle from './globalStyle';
-import Hero from './components/Hero';
+import Hero from './components/section/Hero';
 import { SliderData } from './data/SliderData';
-import About from './components/About';
-import Allocation from './components/Allocation';
-import Tokenomics from './components/Tokenomics';
+import About from './components/section/About';
 import { aboutData } from './data/AboutData';
-import Footer from './components/Footer';
+import Benefit from './components/section/Benefit';
+import { benefitData } from './data/BenefitData';
+import Grow from './components/section/Grow';
+import { growData } from './data/GrowData';
+import Tokenomics from './components/section/Tokenomics';
+import { tokenomicsData, tokenomicsToken } from './data/TokenomicsData';
+import Roadmap from './components/section/Roadmap';
+import { roadmapData } from './data/RoadmapData';
+import Puchase from './components/section/Puchase'
+
+import Footer from './components/section/Footer';
 import Dropdown from './components/Dropdown';
-import { allocationData } from './data/AllocationData';
-import { tokenomicsData } from './data/TokenomicsData';
+import { PuchaseData } from './data/PuchaseData';
+
+
 
 function App() {
   const[isOpen, setIsOpen] = useState(false);
@@ -24,9 +33,12 @@ function App() {
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle}/>
       <Hero slides={SliderData} />
-      <About {...aboutData} />
-      <Allocation {...allocationData}/>
-      <Tokenomics {...tokenomicsData}/>
+      <About abouts={aboutData} />
+      <Benefit benefits={benefitData}/>
+      <Grow Grows={growData} />
+      <Tokenomics tokenCards={tokenomicsToken}/>
+      <Roadmap Roadmaps={roadmapData}/>
+      <Puchase puchases={PuchaseData} />
       <Footer />
     </>
   );

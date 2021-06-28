@@ -4,10 +4,6 @@ export const menuData = [
         link : 'about' 
     },
     {
-        title : 'Allocation',
-        link : 'allocation' 
-    },
-    {
         title : 'Tokenomics',
         link : 'tokenomics' 
     },

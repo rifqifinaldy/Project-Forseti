@@ -1,12 +1,20 @@
-export const aboutData = {
-    id: 'about',
-    lightBg: false,
-    lightText: true,
-    dark: true,
-    primary: true,
-    header: 'About Us',
-    subtitle: 'About Subtitle',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, sequi corporis in ea illo, eum libero, magni consequuntur ex laudantium necessitatibus porro tempore. Corrupti quis repellendus eum, exercitationem similique optio.',
-    btnLabel: 'About Button',
-};
+import techImage from '../images/about/tech.svg';
+import humanityImage from '../images/about/humanity.svg';
+
+export const aboutData = [
+    {
+        subtitle: "Forseti is Future",
+        description : "Forseti adalah sebuah ekosistem produk teknologi berbasis blockchain yang bertujuan untuk memberikann maafaat bernilai dari sebuah instrumen pengolahan aset dalam bentuk token yang berkomitmen secara penuh untuk bersama – sama mendapatkan keuntungan dari pemanfaatan aplikasi desentralisasi keuangan.",
+        imgStart : false,
+        img: techImage,
+        left: true,
+    },
+    {
+        subtitle: "Forseti For Humanity",
+        description : "Forseti tidak hanya bergerak dalam pengaplikasiaan desentralisasi keuangan namun juga memiliki visi dan berfokus pada kegiatan kemanusian dimana nantinya sebagian dana akan dialokasikan untuk membantu menyelesaikan masalah persoalan kemanusian yang terjadi disekitar kita. \n Forseti akan bekerjasama dengan Binance Charity yang sudah terpercaya dalam penanganan persoalan kemanusian dengan menerapakan sistem blockchain.",
+        imgStart : true,
+        img: humanityImage,
+        left: false,
+    },
+]
 

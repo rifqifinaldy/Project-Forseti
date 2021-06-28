@@ -3,6 +3,7 @@ import ImageTwo from '../images/hero/11.jpg'
 import ImageThree from '../images/hero/12.jpg'
 import ImageFour from '../images/hero/10.jpg'
 
+
 export const SliderData = [
     {
         quotes : '',
