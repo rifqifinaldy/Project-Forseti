@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/forseti-web/static/js/main.71539649.chunk.js",
-    "main.js.map": "/forseti-web/static/js/main.71539649.chunk.js.map",
+    "main.js": "/forseti-web/static/js/main.c3881041.chunk.js",
+    "main.js.map": "/forseti-web/static/js/main.c3881041.chunk.js.map",
     "runtime-main.js": "/forseti-web/static/js/runtime-main.9c581a8a.js",
     "runtime-main.js.map": "/forseti-web/static/js/runtime-main.9c581a8a.js.map",
     "static/js/2.8725aabe.chunk.js": "/forseti-web/static/js/2.8725aabe.chunk.js",
@@ -17,14 +17,14 @@
     "static/media/bg-1.10cc37e5.jpg": "/forseti-web/static/media/bg-1.10cc37e5.jpg",
     "static/media/bg-3.555b4064.jpg": "/forseti-web/static/media/bg-3.555b4064.jpg",
     "static/media/grow.cb2e8947.svg": "/forseti-web/static/media/grow.cb2e8947.svg",
-    "static/media/humanity.2b9aba6e.svg": "/forseti-web/static/media/humanity.2b9aba6e.svg",
+    "static/media/humanitymove.c5604433.svg": "/forseti-web/static/media/humanitymove.c5604433.svg",
     "static/media/logo-img.89bdd1ec.png": "/forseti-web/static/media/logo-img.89bdd1ec.png",
     "static/media/logo.4926726c.png": "/forseti-web/static/media/logo.4926726c.png",
-    "static/media/tech.a66002a6.svg": "/forseti-web/static/media/tech.a66002a6.svg"
+    "static/media/techmove.6f638780.svg": "/forseti-web/static/media/techmove.6f638780.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9c581a8a.js",
     "static/js/2.8725aabe.chunk.js",
-    "static/js/main.71539649.chunk.js"
+    "static/js/main.c3881041.chunk.js"
   ]
 }
