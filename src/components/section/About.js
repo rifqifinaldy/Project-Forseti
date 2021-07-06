@@ -51,6 +51,7 @@ const TextWrapper = styled.div`
     max-width: 540px;
     padding-top: 0;
     padding-bottom: 60px;
+    text-align: center;
 `;
 
 const AboutDescription = styled.p`

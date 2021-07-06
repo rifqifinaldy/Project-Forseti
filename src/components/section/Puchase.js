@@ -13,6 +13,14 @@ const PuchaseContainer = styled.div`
     }
 `;
 
+const Wave = styled.div`
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    line-height: 0;
+`;
+
 const PuchaseContent = styled.div `
     max-width: 1200px;
     padding: 48px 80px;
@@ -31,6 +39,9 @@ const PuchaseRow = styled.div`
     grid-auto-columns: minmax(auto, 1fr);
     align-items: center;
     grid-template-areas: "col1 col2";
+    @media screen and (max-width: 768px) {
+        grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col2' 'col1 col1'` : `'col1 col1' 'col2 col2'`)};
+    }
 `;
 
 const Column1 = styled.div`
@@ -164,6 +175,9 @@ const Puchase = ({puchases}) => {
                     </Column2>
                 </PuchaseRow>
             </PuchaseContent>
+            <Wave>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#317481" fillOpacity="0.7" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+            </Wave>
         </PuchaseContainer>
     )
 }

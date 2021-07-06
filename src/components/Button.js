@@ -16,6 +16,8 @@ export const Button = styled(LinkS)`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     padding: ${({big}) => 
     (big ? '16px 40px' : '14px 24px')};
     color: ${({primary}) => (primary ? '#E8F0F2' : '#131313')};

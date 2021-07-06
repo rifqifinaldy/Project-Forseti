@@ -150,14 +150,14 @@ const Forsetilogo = styled(motion.img)`
     width: 200px;
     border: 2px solid transparent;
     border-radius: 50%;
-    box-shadow:  0px 0px 15px 3px #fff;
+    box-shadow:   0px 0px 11px 3px #DAA520;
 `;
 
 const Motto = styled(motion.h2)`
     font-weight: 400;
     text-shadow:
-      0 0 21px #fff,
-      0 0 100px #317481;
+      0 0 21px #DAA520,
+      0 0 100px #DAA520;
 `
 
 const arrowButtons = css`

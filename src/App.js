@@ -36,8 +36,9 @@ function App() {
       <About abouts={aboutData} />
       <Benefit benefits={benefitData}/>
       <Grow Grows={growData} />
-      <Tokenomics tokenCards={tokenomicsToken}/>
       <Roadmap Roadmaps={roadmapData}/>
+      <Tokenomics tokenCards={tokenomicsToken}/>
+      
       <Puchase puchases={PuchaseData} />
       <Footer />
     </>

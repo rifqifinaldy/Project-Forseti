@@ -112,10 +112,6 @@ const Tokenomics = ( {tokenCards} ) => {
                             </TokenGraph>
                         </TokenomicsWrapper>       
                 </TokenomicsContent>
-                <Wave>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#317481" fillOpacity="0.7" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-                </Wave>
-                
             </TokenomicsContainer>
         </>
     );

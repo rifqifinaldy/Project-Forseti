@@ -1,5 +1,5 @@
-import techImage from '../images/about/tech.svg';
-import humanityImage from '../images/about/humanity.svg';
+import techImage from '../images/about/techmove.svg';
+import humanityImage from '../images/about/humanitymove.svg';
 
 export const aboutData = [
     {
