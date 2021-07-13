@@ -2,23 +2,47 @@ import React from 'react'
 import styled from 'styled-components';
 import {Header, Border, Description, Subtitle } from '../TitleSubtitle';
 import { Button } from '../Button';
+import img from "../../images/background/bg-3.jpg"
 
 const PuchaseContainer = styled.div`
-   color: #fff;
-    align-items: center;
-    background :#010606;
-    
+background-image: url(${img});
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+    z-index : 1;
+    width: 100%;
+    color: #fff;
     @media screen and (max-width: 768px){
-        padding: 20px 0;
+        padding: 0 0;
     }
 `;
+
+const TopWave = styled.div`
+    margin-top: -4px;
+    width: 100%;
+    z-index: 200;
+`
 
 const Wave = styled.div`
     bottom: 0;
     left: 0;
+    margin-bottom: -0.5em;
     width: 100%;
     z-index: 200;
-    line-height: 0;
+`;
+
+const PuchaseBg = styled.div `
+    
+    z-index : -3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 0 0 5% 5%;
+    border-bottom: 1px solid #fff;
+    @media screen and (max-width: 768px){
+        border-radius: 0 0 0 0;
+    }
 `;
 
 const PuchaseContent = styled.div `
@@ -58,7 +82,7 @@ const Column2 = styled.div`
 `;
 
 const PuchaseWrapper = styled.div`
-    background: rgba(49,116,129, 0.3);
+    background: rgba(0,0,0, 0.5);
     display : flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -67,6 +91,10 @@ const PuchaseWrapper = styled.div`
     border-radius: 10%;
     box-shadow: rgba(255, 255, 255, 0.2)0px 1px 3px;
     transition: all 0.2s ease-in-out;
+`;
+
+const ContentListWrapper = styled.div`
+
 `;
 
 const ContentList = styled.ul`
@@ -81,6 +109,10 @@ const ContentListItem = styled.li`
 const Puchase = ({puchases}) => {
     return (
         <PuchaseContainer id="puchases">
+            <TopWave>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180.36068725585938"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+            </TopWave>
+            <PuchaseBg></PuchaseBg>
             <PuchaseContent>
                 <Header>
                     Puchase Now
@@ -103,7 +135,7 @@ const Puchase = ({puchases}) => {
                             <ContentListItem>
                                 Wait for the pre-sale to start
                             </ContentListItem>
-                            <Button to="/" primary={true}>BUY BNB</Button>
+                            <Button to="/" primary="true">BUY BNB</Button>
                         </ContentList>
                         
                         <Subtitle>
@@ -139,9 +171,9 @@ const Puchase = ({puchases}) => {
                             
                                 {puchases.map((puchase, index) => {
                                     return (
-                                        <>
+                                        <ContentListWrapper key={index}>
                                             <ContentList none={true}>
-                                                <ContentListItem key={index}>
+                                                <ContentListItem>
                                                     Price : {puchase.price}
                                                 </ContentListItem>
                                                 <ContentListItem>
@@ -154,7 +186,7 @@ const Puchase = ({puchases}) => {
                                                     Hard Cap (2000 BNB) : {puchase.hard_cap}
                                                 </ContentListItem>
                                             </ContentList>
-                                            <Button primary={true}>Unlock Wallet</Button>
+                                            <Button to="/" primary="true">Unlock Wallet</Button>
                                             <ContentList none={true}>
                                                 <ContentListItem>
                                                     For Sale : {puchase.for_sale}
@@ -166,7 +198,7 @@ const Puchase = ({puchases}) => {
                                                     Min Contribution : {puchase.min_contribution}
                                                 </ContentListItem>
                                             </ContentList>
-                                        </>
+                                        </ContentListWrapper>
                                     )
                                 })}
                                 
@@ -176,7 +208,7 @@ const Puchase = ({puchases}) => {
                 </PuchaseRow>
             </PuchaseContent>
             <Wave>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#317481" fillOpacity="0.7" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
             </Wave>
         </PuchaseContainer>
     )

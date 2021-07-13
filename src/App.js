@@ -18,6 +18,7 @@ import Puchase from './components/section/Puchase'
 import Footer from './components/section/Footer';
 import Dropdown from './components/Dropdown';
 import { PuchaseData } from './data/PuchaseData';
+import { ecosystemData } from './data/EcosystemData';
 
 
 
@@ -34,10 +35,10 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle}/>
       <Hero slides={SliderData} />
       <About abouts={aboutData} />
-      <Benefit benefits={benefitData}/>
+      <Benefit benefits={benefitData} ecosystems={ecosystemData}/>
       <Grow Grows={growData} />
-      <Roadmap Roadmaps={roadmapData}/>
-      <Tokenomics tokenCards={tokenomicsToken}/>
+      {/* <Roadmap Roadmaps={roadmapData}/> */}
+      {/* <Tokenomics tokenCards={tokenomicsToken}/> */}
       
       <Puchase puchases={PuchaseData} />
       <Footer />

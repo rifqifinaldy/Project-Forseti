@@ -46,7 +46,7 @@ export default class Timeline extends React.Component {
         <div style={{
             textAlign: "center"
           }}>
-          {/* Prevoius:-{prevStatus} - Current Select:-{curStatus} */}
+          Prevoius:-{prevStatus} - Current Select:-{curStatus}
           {curStatus}
         </div>
       </div>

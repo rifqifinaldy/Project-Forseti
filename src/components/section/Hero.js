@@ -19,7 +19,7 @@ const Wave = styled.div`
     width: 100%;
     margin-bottom: -4px;
     z-index: 12;
-`
+`;
 
 const HeroWrapper = styled.div`
     width: 100%;
@@ -80,12 +80,14 @@ const HeroImage = styled(motion.img)`
 const HeroText = styled(motion.h1)`
     position: absolute;
     color: #fff;
-    font-size: 300px;
+    font-size: 180px;
     z-index: 10;
     display: flex;
     opacity: 0.1;
+    margin-left: 300px;
     @media screen and (max-width: 1024px){
         font-size: 180px;
+        margin-left: 0;
     }
     @media screen and (max-width: 962px){
         font-size: 100px;

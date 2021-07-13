@@ -1,7 +1,6 @@
 import React from 'react';
 import {Header, Border} from '../TitleSubtitle';
 import styled from 'styled-components';
-import backgroundImg from '../../images/background/bg-3.jpg';
 
 const Wave = styled.div`
     bottom: 0;

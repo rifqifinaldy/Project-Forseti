@@ -10,10 +10,11 @@ const Card =styled.div`
     justify-content: flex-start;
     border-radius: 30px;
     align-items: center;
-    max-height: 340px;
-    padding: 30px;
+    height : ${({large}) => (large ? '280px' : '170px')};
+    padding: ${({large}) => (large ? '30px' : '15px' )};
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     transition: all 0.2s ease-in-out;
+    overflow-y:auto ;
 
     &:hover {
         transform: scale(1.02);
@@ -37,16 +38,16 @@ const CardH2 = styled.h2`
 const CardP = styled.p`
     font-size: 1rem;
     color: #fff;
-    text-align: justify;
+    text-align: center;
 `
 
 // Jenis Cards
 
-export const Cards = ({title, description}) => {
+export const Cards = ({large, title, description}) => {
 
     return (
         <>
-            <Card>
+            <Card large={large}>
                 <CardH2>{title}</CardH2>
                 <Border />
                 <CardP>{description}</CardP>

@@ -1,5 +1,7 @@
 import techImage from '../images/about/techmove.svg';
 import humanityImage from '../images/about/humanitymove.svg';
+import shieldImage from '../images/about/shield.svg';
+import blockchainImage from '../images/about/blockchain3.svg';
 
 export const aboutData = [
     {
@@ -16,5 +18,20 @@ export const aboutData = [
         img: humanityImage,
         left: false,
     },
+    {
+        subtitle: "Forseti is Shield",
+        description : "Perlindungan nilai aset adalah sesuai hal yang sangat penting bagi setiap pemegang token Forseti. Nilai aset akan memberikan keuntungan manfaat bagi pemegang token. Untuk itu Forseti akan melakukan langkah-langkah perlindungan seperti pengenaan fee transaksi yang tinggi bagi penjual token, Penambahan likuiditas secara otomatis dari setiap transaksi dan pembelian kembali token Forseti secara berkala sehingga nilai aset bisa tetap terjaga",
+        imgStart : false,
+        img: shieldImage,
+        left: true,
+    },
+    {
+        subtitle: "Forseti is Blockchain",
+        description : "Forseti akan mengimplementasikan teknologi blockchain dalam kehidupan nyata seperti Komersial, Logistik, Pendidikan, dan lain-lain. Dengan demikian Forseti secara bertahap akan masuk ke dalam semua lini kehidupan yang lebih efisian namun berteknologi terkini",
+        imgStart : true,
+        img: blockchainImage,
+        left: false,
+    },
+    
 ]
 

@@ -55,6 +55,7 @@ const TextWrapper = styled.div`
 `;
 
 const AboutDescription = styled.p`
+    font-size: 18px;
     text-align: ${({left}) => (left ? 'left' : 'center')};
 `;
 
@@ -69,7 +70,7 @@ const Img = styled.img`
     padding-right: 0;
 `;
 
-function About({abouts, imgStart}) {
+function About({abouts}) {
     return (
         <AboutContainer id="about">
                 <MoveStuffAround />
