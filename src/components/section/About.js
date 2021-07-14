@@ -1,5 +1,7 @@
-import React from 'react'
-import {Header, Border, Subtitle} from '../TitleSubtitle'
+import React, { useEffect } from 'react';
+import {Header, Border, Subtitle} from '../TitleSubtitle';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 import styled from "styled-components";
 import MoveStuffAround from '../Ticker';
 
@@ -71,6 +73,9 @@ const Img = styled.img`
 `;
 
 function About({abouts}) {
+    useEffect(() => {
+        Aos.init({duration: 2000});
+    }, [])
     return (
         <AboutContainer id="about">
                 <MoveStuffAround />
@@ -80,7 +85,7 @@ function About({abouts}) {
                     {abouts.map((about,index) => {
                         return (
                         <DescriptionRow key={index} imgStart={about.imgStart}>
-                                <Column1 left={about.left}>
+                                <Column1 left={about.left} data-aos="zoom-in" data-aos-mirror="true" data-aos-once="false">
                                     <TextWrapper>
                                         <Subtitle>
                                             {about.subtitle}
@@ -91,7 +96,7 @@ function About({abouts}) {
                                         </AboutDescription>
                                     </TextWrapper> 
                                 </Column1>
-                                <Column2 left={about.left}>
+                                <Column2 left={about.left} data-aos="zoom-out" data-aos-mirror="true" data-aos-once="false">
                                     <ImgWrap>
                                     <Img src={about.img}/>
                                     </ImgWrap>

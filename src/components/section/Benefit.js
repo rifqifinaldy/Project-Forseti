@@ -25,6 +25,10 @@ const BenefitContainer = styled.div`
     }
 `;
 
+const SectionBorder = styled.div`
+    margin-top: -4px;
+`
+
 const BenefitBg = styled.div`
     background-image: url(${img});
     background-size: cover;
@@ -35,8 +39,7 @@ const BenefitBg = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    border-radius: 0 0 5% 5%;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #317481;
     @media screen and (max-width: 768px){
         border-radius: 0 0 0 0;
     }
@@ -61,6 +64,7 @@ const BenefitCards =styled.div`
     display: grid;
     grid-template-columns : ${({large}) => (large ? '1fr 1fr 1fr' : '1fr 1fr 1fr 1fr')};
     align-items: center;
+    justify-content: center;
     margin-bottom: 1em;
     grid-gap: 16px;
     padding: 0 50px;
@@ -88,6 +92,7 @@ const Benefit = ({benefits, ecosystems}) => {
                 </Wave>
                 <BenefitBg>
                 </BenefitBg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180.36068725585938"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
                 <BenefitContent id="benefit">
                     <Header>What's The Benefit</Header>
                     <Border>
@@ -95,14 +100,20 @@ const Benefit = ({benefits, ecosystems}) => {
                     <BenefitCards large="false">
                     {benefits.map((benefits, index) => {
                         return (
-                            <Cards large={true} key={index} description={benefits.description} title={benefits.icon}/>
+                            <Cards scrolling={benefits.animation} large={true} key={index} description={benefits.description} title={benefits.icon}/>
                         )
                     })} 
                     </BenefitCards>
+                </BenefitContent>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+                <SectionBorder>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180.36068725585938"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+                </SectionBorder>
+                <BenefitContent>
                     <Header>Ecosystem</Header>
                     <Border>
                     </Border>
-                    <BenefitCards>
+                    <BenefitCards large="true">
                     {ecosystems.map((ecosystem, index) => {
                         return (
                             <Cards large={false} key={index} description={ecosystem.description} title={ecosystem.icon}/>
