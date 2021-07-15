@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import styled from "styled-components";
 
 const Card =styled.div`
-    background: rgba(0,0,0, 0.7);
+    background: ${({dark}) => (dark ? 'rgba(0,0,0, 0.7)' : 'rgba(255,255,255, 0.8)')} ;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -33,20 +33,20 @@ const CardH2 = styled.h2`
 
 const CardP = styled.p`
     font-size: 1rem;
-    color: #fff;
+    color: ${({dark}) => (dark ? '#fff' : '#010606')};
     text-align: center;
 `;
 
-export const Cards = ({large, title, description, scrolling}) => {
+export const Cards = ({large, dark, title, description, scrolling, scrollingDuration}) => {
     useEffect(() => {
         Aos.init({duration: 3000});
     }, [])
     return (
         <>
-            <Card large={large} data-aos={scrolling} data-aos-mirror="true" data-aos-once="false">
+            <Card dark={dark} large={large} data-aos={scrolling} data-aos-duration={scrollingDuration} data-aos-delay="250" data-aos-offset="450" data-aos-mirror="true" data-aos-once="false">
                 <CardH2>{title}</CardH2>
                 <Border />
-                <CardP>{description}</CardP>
+                <CardP dark={dark}>{description}</CardP>
             </Card>
         </>
     )

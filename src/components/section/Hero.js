@@ -366,10 +366,10 @@ function Hero({slides}) {
                             </HeroContent>
                         </HeroSlider>
                     </HeroSlide>
-                <SliderButtons>
+                {/* <SliderButtons>
                     <PrevArrow onClick={prevSlide}/>
                     <NextArrow onClick={nextSlide}/>
-                </SliderButtons>
+                </SliderButtons> */}
                 
                 </HeroWrapper>
                 <Wave>
@@ -380,53 +380,53 @@ function Hero({slides}) {
             </HeroSection>
         )
     }
-    return (
-        <HeroSection>
-            <HeroWrapper>
-            {slides.map((slide, index) => {
-                return (
-                    <HeroSlide key={index}>
-                        <AnimatePresence>
-                        {index === current && (
-                        <HeroSlider justify='true'>
-                            <HeroImage 
-                            variants ={slidingAnimation} 
-                            initial ="beginSlide" 
-                            animate="endSlide"
-                            exit="exit"
-                            src={slide.image} alt={slide.alt}/>
-                            <HeroContent align='true'>
-                                <Quotes 
-                                left="true" 
-                                variants ={WordAnimation} 
-                                initial ="begin" 
-                                animate="end"
-                                exit="exit">
-                                    {slide.quotes}
-                                </Quotes>
-                                <Author 
-                                variants ={WordAnimation} 
-                                initial ="begin" 
-                                animate="end"
-                                exit="exit">{slide.author}</Author>       
-                            </HeroContent>
-                        </HeroSlider>
-                        )}
-                        </AnimatePresence>
-                    </HeroSlide>
-                );
-            })};
-                <SliderButtons>
-                    <PrevArrow onClick={prevSlide}/>
-                    <NextArrow onClick={nextSlide}/>
-                </SliderButtons>
-            </HeroWrapper>
-            <Wave>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#010606" fillOpacity="1" d="M0,128L60,149.3C120,171,240,213,360,208C480,203,600,149,720,154.7C840,160,960,224,1080,250.7C1200,277,1320,267,1380,261.3L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-            </Wave>
-        </HeroSection>
-    )
+    // return (
+    //     <HeroSection>
+    //         <HeroWrapper>
+    //         {slides.map((slide, index) => {
+    //             return (
+    //                 <HeroSlide key={index}>
+    //                     <AnimatePresence>
+    //                     {index === current && (
+    //                     <HeroSlider justify='true'>
+    //                         <HeroImage 
+    //                         variants ={slidingAnimation} 
+    //                         initial ="beginSlide" 
+    //                         animate="endSlide"
+    //                         exit="exit"
+    //                         src={slide.image} alt={slide.alt}/>
+    //                         <HeroContent align='true'>
+    //                             <Quotes 
+    //                             left="true" 
+    //                             variants ={WordAnimation} 
+    //                             initial ="begin" 
+    //                             animate="end"
+    //                             exit="exit">
+    //                                 {slide.quotes}
+    //                             </Quotes>
+    //                             <Author 
+    //                             variants ={WordAnimation} 
+    //                             initial ="begin" 
+    //                             animate="end"
+    //                             exit="exit">{slide.author}</Author>       
+    //                         </HeroContent>
+    //                     </HeroSlider>
+    //                     )}
+    //                     </AnimatePresence>
+    //                 </HeroSlide>
+    //             );
+    //         })};
+    //             <SliderButtons>
+    //                 <PrevArrow onClick={prevSlide}/>
+    //                 <NextArrow onClick={nextSlide}/>
+    //             </SliderButtons>
+    //         </HeroWrapper>
+    //         <Wave>
+    //         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    //             <path fill="#010606" fillOpacity="1" d="M0,128L60,149.3C120,171,240,213,360,208C480,203,600,149,720,154.7C840,160,960,224,1080,250.7C1200,277,1320,267,1380,261.3L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    //         </Wave>
+    //     </HeroSection>
+    // )
 }
 
 export default Hero

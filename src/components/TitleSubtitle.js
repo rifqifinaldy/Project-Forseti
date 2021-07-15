@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 
 export const TextWrapper = styled.div`
@@ -47,13 +47,15 @@ export const Border = styled.div`
     margin-left: auto;
     margin-right: auto;
     background-color: #317481;
-`
+`;
 
 
-const TitleSubtitle = ({header, subtitle, description}) => {
+const TitleSubtitle = () => {
     return (
         <>
         <TextWrapper>
+            <Header>
+            </Header>
             <Subtitle>
             </Subtitle>
             <Border>

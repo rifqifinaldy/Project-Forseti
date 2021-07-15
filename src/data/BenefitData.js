@@ -5,19 +5,19 @@ import fireMove from '../images/icon/firemove1.png';
 export const benefitData = [
     {
         id:"1",
-        animation: "slide-right",
+        animation: "fade-right",
         description: "Proteksi terhadap nilai aset.",
         icon: <IoShieldSharp color="#317481" fontSize="72px" />
     },
     {
         id:"2",
-        animation: "slide-up",
+        animation: "fade-up",
         description: "Hepyer Deflasi Dengan melakukan pembakaran token secara bertahap hingga 30% dari Jumlah Supply.",
         icon: <IoTrendingUpOutline color="#317481" fontSize="72px" />
     },
     {
         id:"3",
-        animation: "slide-left",
+        animation: "fade-left",
         description: "Pemberlakukan pajak sebanyak 12% apabila melakukan penjualan token.",
         icon: <FaDollarSign color="#317481" fontSize="72px"/> 
     },

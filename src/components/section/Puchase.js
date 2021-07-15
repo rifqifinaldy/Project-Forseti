@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components';
 import {Header, Border, Description, Subtitle } from '../TitleSubtitle';
 import { Button } from '../Button';
-import img from "../../images/background/bg-3.jpg"
+import img from "../../images/background/bg-3.jpg";
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const PuchaseContainer = styled.div`
 background-image: url(${img});
@@ -107,6 +109,13 @@ const ContentListItem = styled.li`
 `;
 
 const Puchase = ({puchases}) => {
+    useEffect(() => {
+        Aos.init({
+            duration: 3000,
+            once: false,
+            mirror: true,
+        });
+    }, [])
     return (
         <PuchaseContainer id="puchases">
             <TopWave>
@@ -114,34 +123,33 @@ const Puchase = ({puchases}) => {
             </TopWave>
             <PuchaseBg></PuchaseBg>
             <PuchaseContent>
-                <Header>
+                <Header data-aos="fade-down" data-aos-offset="200" data-aos-delay="500">
                     Puchase Now
                 </Header>
-                <Border></Border>
-                <Description>
+                <Border data-aos="flip-left"></Border>
+                <Description data-aos="fade-down" data-aos-offset="200" data-aos-delay="500">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptatum doloremque dolor sequi debitis iste, velit nulla nostrum hic. Repellat molestiae voluptatibus nihil? Laudantium earum praesentium, animi voluptatum autem similique?
                 </Description>
                 <PuchaseRow>
                     <Column1>
-                        <h1>Presale</h1>
+                        <h1 data-aos="fade-up" data-aos-offset="200" data-aos-delay="500">Presale</h1>
                         
-                        <Subtitle>
+                        <Subtitle data-aos="fade-right" data-aos-offset="200" data-aos-delay="500">
                             Before Pre-Sale
                         </Subtitle>
-                        <ContentList none={false}>
+                        <ContentList data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" none={false}>
                             <ContentListItem>
                                 Buy BNB
                             </ContentListItem>
                             <ContentListItem>
                                 Wait for the pre-sale to start
                             </ContentListItem>
-                            <Button to="/" primary="true">BUY BNB</Button>
                         </ContentList>
-                        
-                        <Subtitle>
+                        <Button data-aos="fade-right" data-aos-offset="200" data-aos-delay="500" to="/" primary="true">BUY BNB</Button>
+                        <Subtitle data-aos="fade-left" data-aos-offset="200" data-aos-delay="500">
                             During Pre-Sale
                         </Subtitle>
-                        <ContentList none={false}>
+                        <ContentList data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" none={false}>
                             <ContentListItem>
                                 While the sale is live, press the contribute button and input the amount of BNB
                             </ContentListItem>
@@ -155,17 +163,17 @@ const Puchase = ({puchases}) => {
                                 Max Amount 7 BNB
                             </ContentListItem>
                         </ContentList>
-                        <Subtitle>
+                        <Subtitle data-aos="fade-left" data-aos-offset="200" data-aos-delay="500">
                             After Pre-Sale
                         </Subtitle>
-                        <ContentList none={false}>
+                        <ContentList data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" none={false}>
                             <ContentListItem>
                                 Token will distribute to your wallet after the pre-sale
                             </ContentListItem>
                         </ContentList>
                     </Column1>
                     <Column2>
-                        <PuchaseWrapper>
+                        <PuchaseWrapper data-aos="fade-up" data-aos-offset="700" data-aos-mirror="true" data-aos-once="false">
                             <Subtitle>Forseti</Subtitle>
                             <Border></Border>
                             

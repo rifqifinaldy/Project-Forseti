@@ -19,6 +19,8 @@ import Footer from './components/section/Footer';
 import Dropdown from './components/Dropdown';
 import { PuchaseData } from './data/PuchaseData';
 import { ecosystemData } from './data/EcosystemData';
+import Partner from './components/section/Partner';
+import { partnerData } from './data/PartnerData';
 
 
 
@@ -37,6 +39,7 @@ function App() {
       <About abouts={aboutData} />
       <Benefit benefits={benefitData} ecosystems={ecosystemData}/>
       <Grow Grows={growData} />
+      <Partner Partners={partnerData} />
       {/* <Roadmap Roadmaps={roadmapData}/> */}
       {/* <Tokenomics tokenCards={tokenomicsToken}/> */}
       

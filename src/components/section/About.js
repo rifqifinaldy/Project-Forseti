@@ -74,29 +74,33 @@ const Img = styled.img`
 
 function About({abouts}) {
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({
+            duration: 2000,
+            once: false,
+            mirror: true,
+        });
     }, [])
     return (
         <AboutContainer id="about">
                 <MoveStuffAround />
-                    <Header>About Us</Header>
-                    <Border></Border>
+                    <Header data-aos="fade-up">About Us</Header>
+                    <Border data-aos="flip-left"></Border>
                     <DescriptionWrapper>
                     {abouts.map((about,index) => {
                         return (
                         <DescriptionRow key={index} imgStart={about.imgStart}>
-                                <Column1 left={about.left} data-aos="zoom-in" data-aos-mirror="true" data-aos-once="false">
+                                <Column1 left={about.left}>
                                     <TextWrapper>
-                                        <Subtitle>
+                                        <Subtitle data-aos="slide-up">
                                             {about.subtitle}
                                         </Subtitle>
-                                        <Border></Border>
-                                        <AboutDescription >
+                                        <Border data-aos="flip-left"></Border>
+                                        <AboutDescription data-aos="zoom-in-up">
                                             {about.description}
                                         </AboutDescription>
                                     </TextWrapper> 
                                 </Column1>
-                                <Column2 left={about.left} data-aos="zoom-out" data-aos-mirror="true" data-aos-once="false">
+                                <Column2 left={about.left} data-aos="zoom-out-down">
                                     <ImgWrap>
                                     <Img src={about.img}/>
                                     </ImgWrap>
