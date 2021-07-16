@@ -79,20 +79,20 @@ const Partner = ({Partners}) => {
     return (
         <PartnerContainer>
             <PartnerContent>
-                <Header data-aos="fade-up" data-aos-offset="600" data-aos-delay="500">
+                <Header data-aos="fade-up">
                     Our Partner
                 </Header>
-                <Border data-aos="flip-left" data-aos-offset="600" data-aos-delay="500"></Border>
-                <PartnerImgWrapper data-aos="fade-left" data-aos-offset="600" data-aos-delay="500">
+                <Border data-aos="flip-left"></Border>
+                <PartnerImgWrapper data-aos="fade-left">
                     <PartnerImg src={PartnerSVG}/>
                 </PartnerImgWrapper>
-                <PartnerDescription data-aos="fade-up" data-aos-offset="600" data-aos-delay="500">
+                <PartnerDescription data-aos="fade-up">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat suscipit aliquam inventore id possimus similique? Error officia quod exercitationem cumque non delectus dignissimos, consectetur at obcaecati sunt? Perferendis, libero!
                 </PartnerDescription>
                 <PartnerRow>
                 {Partners.map((Partner,index) => {
                     return (
-                        <PartnerLogo key={index} src={Partner.img} data-aos="fade-up" data-aos-offset="600" data-aos-delay="1000" />
+                        <PartnerLogo key={index} src={Partner.img} data-aos="fade-up" />
                     )
                 }
                 )}

@@ -38,11 +38,10 @@ function App() {
       <Hero slides={SliderData} />
       <About abouts={aboutData} />
       <Benefit benefits={benefitData} ecosystems={ecosystemData}/>
+      <Roadmap Roadmaps={roadmapData}/>
+      <Tokenomics/>
       <Grow Grows={growData} />
       <Partner Partners={partnerData} />
-      {/* <Roadmap Roadmaps={roadmapData}/> */}
-      {/* <Tokenomics tokenCards={tokenomicsToken}/> */}
-      
       <Puchase puchases={PuchaseData} />
       <Footer />
     </>

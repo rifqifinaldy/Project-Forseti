@@ -1,6 +1,12 @@
-import React from 'react';
-import {Header, Border} from '../TitleSubtitle';
+import React, {useEffect} from 'react';
+import {Header, Border, Subtitle} from '../TitleSubtitle';
 import styled from 'styled-components';
+import Rocket from '../../images/tokenomics/rocket.png';
+import Moon from '../../images/tokenomics/Moon.svg';
+import star from '../../images/tokenomics/background.gif';
+import { motion, AnimatePresence } from 'framer-motion';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Wave = styled.div`
     bottom: 0;
@@ -11,12 +17,44 @@ const Wave = styled.div`
 `;
 
 const TokenomicsContainer = styled.div`
-    color: #fff;
-    align-items: center;
-    background : ${({lightBg}) => (lightBg ? '#010606' : '#fff')};
-    
+    background-image: url(${star});
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+    z-index : -3;
+    width: 100%;
+    height: 100%;
     @media screen and (max-width: 768px){
-        
+        padding-top: 50px;
+    }
+`;
+
+const SubHeader = styled.h2 `
+    text-align: center;
+    color : #fff;
+    opacity: 0.7;
+    font-weight : 500;
+    margin-bottom: 0.5em;
+    margin-top: -0.6em;
+`;
+
+const SupplyHeader = styled.h2`
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+`;
+
+const TokenSupply = styled.h2`
+    color: #DAA520;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.2s ease-in;
+
+    &:hover {
+        color : #317481;
+        transform: scale(1.05);
     }
 `;
 
@@ -28,89 +66,95 @@ const TokenomicsContent = styled.div`
     margin-left: auto;
     @media screen and (max-width: 768px){
         width: 100%;
+        padding : 0;
     }
+`;
+
+const ImgWrapper = styled(motion.div)`
+    max-width: 200px;
+    position: absolute;
+    @media screen and (max-width: 768px){
+        max-width:150px;
+    }
+    @media screen and (max-width: 572px){
+        max-width:100px;
+    }
+    @media screen and (max-width: 420px){
+        max-width:50px;
+        margin-top: 10vh;
+    }
+    @media screen and (max-width: 380px){
+        margin-top: 15vh;
+        margin-left : 50px;
+        left: 0;
+    }
+`;
+
+const RocketImg = styled(motion.img)`
+    width: 100%;
+    transform: rotate(50deg);
 `;
 
 const TokenomicsWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: 1000px;
+    justify-content: center;
+    margin-left: 100px;
+    @media screen and (max-width: 768px){
+        margin-left:55px;
+    }
+    @media screen and (max-width: 572px){
+        margin-left:30px;
+    }
+    @media screen and (max-width: 380px){
+        margin-left : 35px;
+    }
 `;
 
-const TokenExample = styled.div `
-    background: rgba(49,116,129, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 10%;
-    align-items: center;
-    max-height: 340px;
-    padding: 30px;
-    box-shadow: 0 1px 3px rgba(255,255,255,0.2);
-    transition: all 0.2s ease-in-out;
+const MoonImg = styled.img`
+    width:100%;
+`;
 
-    &:hover {
-        transform: scale(1.02);
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-    }
-`
-
-const TokenList = styled.ul`
-    list-style-type: none;
-`
-
-const TokenListItem = styled.li`
-    margin-bottom: 0.5em;
-`
-
-const TokenGraph = styled.div `
-
-`
-
-
-
-const Tokenomics = ( {tokenCards} ) => {
-
+const Tokenomics = () => {
+    useEffect(() => {
+        Aos.init({
+            duration: 3000,
+            once: true,
+            mirror: false,
+        });
+    }, [])
     return (
         <>
             <TokenomicsContainer lightBg="true" id="tokenomics">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180.36068725585938"><path fill="#317481" fillOpacity="0.7" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+            
                 <TokenomicsContent>
-                        <Header>
+                        <Header data-aos="fade-up">
                             Tokenomics
                         </Header>
+                        <ImgWrapper
+                        initial={{y:0}}
+                        animate={{y: -50 }}
+                        transition={{duration: 3, 
+                            repeat: Infinity,
+                            repeatType : "mirror",}}>
+                            <RocketImg src={Rocket} alt="Forseti To The Moon"
+                            />
+                        </ImgWrapper>
+                        <SubHeader data-aos="slide-up">(To The Moon)</SubHeader>
                         <Border>
                         </Border>
-                        <TokenomicsWrapper>
-                            <TokenExample>
-                                {tokenCards.map((tokenCard, index) => {
-                                    return (
-                                        <TokenList key={index}>
-                                            <TokenListItem>
-                                                Token Name : {tokenCard.token_name}
-                                            </TokenListItem>
-                                            <TokenListItem>
-                                                Token Name : {tokenCard.symbol}
-                                            </TokenListItem>
-                                            <TokenListItem>
-                                                Total Supply : {tokenCard.total_supply}
-                                            </TokenListItem>
-                                            <TokenListItem>
-                                                Decimal : {tokenCard.decimal}
-                                            </TokenListItem>
-                                            <TokenListItem>
-                                                Jaringan : {tokenCard.jaringan}
-                                            </TokenListItem>
-                                        </TokenList>
-                                    )
-                                })}
-                            </TokenExample>
-                            <TokenGraph>
-                                TOKEN GRAPH
-                            </TokenGraph>
+                        <SupplyHeader data-aos="fade-up">
+                            Total Supply :
+                        </SupplyHeader>
+                        <TokenSupply data-aos="fade-up">
+                            : SETI
+                        </TokenSupply>
+                        <TokenomicsWrapper data-aos="fade-up">
+                            <MoonImg src={Moon}/>
                         </TokenomicsWrapper>       
                 </TokenomicsContent>
+                <Wave>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+                </Wave>
             </TokenomicsContainer>
         </>
     );

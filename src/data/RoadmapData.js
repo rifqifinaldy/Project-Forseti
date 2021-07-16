@@ -1,38 +1,22 @@
 export const roadmapData = [
     {
-      data: "2019-12-05",
-      status: "status",
-      statusB: "Admission Start",
-      statusE: "Admission Open"
+      date: "Q1 2021",
+      subtitle: "Subtitle Q1 2021",
+      description: "Content Description for Q1 2021 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, iure temporibus obcaecati, quam facilis ad velit, similique atque sunt maiores cumque laboriosam est dicta quisquam minima eligendi quia laudantium dolorem!",
     },
     {
-      data: "2020-01-21",
-      status: "status",
-      statusB: "Start 1st round",
-      statusE: "Open for Fillup"
+      date: "Q2 2021",
+      subtitle: "Subtitle Q2 2021",
+      description: "Content Description for Q2 2021 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, iure temporibus obcaecati, quam facilis ad velit.",
     },
     {
-      data: "2020-02-25",
-      status: "status",
-      statusB: "Start 2nd round",
-      statusE: "process"
+      date: "Q3 2021",
+      subtitle: "Subtitle Q3 2021",
+      description: "Content Description for Q3 2021 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, iure temporibus obcaecati, quam facilis ad velit, similique atque sunt maiores cumque",
     },
     {
-      data: "2020-03-16",
-      status: "status",
-      statusB: "Start 3rd round",
-      statusE: "Done"
+      date: "Q4 2021",
+      subtitle: "Subtitle Q4 2021",
+      description: "Content Description for Q4 2021 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium",
     },
-    {
-      data: "2020-04-19",
-      status: "status",
-      statusB: "Start 4th round",
-      statusE: "Done"
-    },
-    {
-      data: "2020-05-23",
-      status: "status",
-      statusB: "Complete",
-      statusE: "Done"
-    }
   ];

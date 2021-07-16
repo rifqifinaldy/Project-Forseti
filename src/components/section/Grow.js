@@ -86,19 +86,19 @@ const Grow = ({Grows}) => {
     return (
         <GrowContainer>
             <GrowContent>
-                <Header data-aos="fade-up" data-aos-offset="200" data-aos-delay="500">
+                <Header data-aos="fade-up">
                     How We Grow 
                 </Header>
-                <Border data-aos="flip-left" data-aos-offset="200" data-aos-delay="500"></Border>
+                <Border data-aos="flip-left"></Border>
                 {Grows.map((Growdata, index) => {
                     return (
                     <GrowRow key={index}>
-                        <Column1 data-aos="fade-left" data-aos-offset="200" data-aos-delay="500">
+                        <Column1 data-aos="fade-left">
                             <GrowDescription>
                                 {Growdata.description}
                             </GrowDescription>
                         </Column1>    
-                        <Column2 data-aos="fade-right" data-aos-offset="200" data-aos-delay="500">
+                        <Column2 data-aos="fade-right">
                             <GrowImageWrapper>
                                 <GrowImg src={Growdata.img} />
                             </GrowImageWrapper>

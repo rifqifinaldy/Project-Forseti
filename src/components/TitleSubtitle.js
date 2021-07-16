@@ -29,7 +29,7 @@ export const Header = styled.h1`
     @media screen and (max-width: 480px){
         font-size: 32px;
     }
-`
+`;
 
 export const Subtitle = styled.p`
     opacity : 0.6;
@@ -37,7 +37,7 @@ export const Subtitle = styled.p`
     font-size: 24px;
     line-height: 24px;
     color: ${({darkText}) => (darkText ? '#010606' : "#fff")};
-`
+`;
 
 export const Border = styled.div`
     width: 48px;

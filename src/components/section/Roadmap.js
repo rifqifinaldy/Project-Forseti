@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import { Header,Border } from '../TitleSubtitle';
-import Timeline from '../Timeline';
-import { roadmapData } from '../../data/RoadmapData';
-import img from "../../images/background/bg-1.jpg"
+import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
+import shuttle from '../../images/roadmap/astronaut.png';
+import { motion, AnimatePresence } from 'framer-motion';
+import Aos from 'aos';
+import "aos/dist/aos.css";
+import img from "../../images/background/bg-1.jpg";
 
 const RoadmapContainer = styled.div`
     color: #fff;
     align-items: center;
     background : #010606;
-    
+    border-bottom: 1px solid #317481;
+    @media screen and (max-width: 768px){
+        padding-top: 20px;
+    }
 `;
 
 const Wave = styled.div`
@@ -26,43 +32,93 @@ const RoadmapContent = styled.div`
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    height: 480px;
     @media screen and (max-width: 768px){
         width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        padding : 48px 0;
     }
 `;
 
-const RoadmapBg = styled.div`
-    background-image: url(${img});
-    z-index : -3;
-    width: 100%;
+const TimelineDate = styled.h3`
+    color : #317481;
+    float : right;
+    margin-right: 1em;
+    margin-left: 1em;
+`;
+
+const TimelineSubtitle = styled.h3`
+    opacity : 0.7;
+    color: #317481;
+    margin-bottom: 20px;
+`;
+
+const TimelineDescription = styled.p`
+    color : #010606;
+`;
+
+const RoadmapIllustrationWrapper= styled(motion.div)`
+    max-width: 300px;
+    top: 40%;
     height: 100%;
     position: absolute;
-    border-radius: 0 0 20% 20%;
-    border-bottom: 1px solid #fff;
-    @media screen and (max-width: 768px){
-        border-radius: 0 0 0 0;
-    }
 `;
 
-function Roadmap() {
+const RoadmapIllustration = styled.img`
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding-right: 0;
+`;
+
+function Roadmap({Roadmaps}) {
+    useEffect(() => {
+        Aos.init({
+            duration: 3000,
+            once: true,
+            mirror: false,
+        });
+    }, [])
     return (
         <RoadmapContainer id="roadmap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180.36068725585938"><path fill="#317481" fillOpacity="0.7" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
-           <RoadmapBg>
-
-           </RoadmapBg>
            <RoadmapContent>
-                <Header>
+                <Header data-aos="fade-up">
                     Road Map
                 </Header>
-                <Border></Border>
-                <Timeline  Roadmaps={roadmapData}/>
-           </RoadmapContent>
-           <Wave>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#317481" fillOpacity="0.7" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-            </Wave>
-        </RoadmapContainer>
+                <Border data-aos="flip-left"></Border>
+                <RoadmapIllustrationWrapper initial={{y:0}}
+                        animate={{y: -10 }}
+                        transition={{duration: 1, 
+                            repeat: Infinity,
+                            repeatType : "mirror",}}>
+                    <RoadmapIllustration src={shuttle}/>
+                </RoadmapIllustrationWrapper>
+                <Timeline lineColor={'#317481'}>
+                {Roadmaps.map((Roadmap, index) => {
+                    return (
+                        <TimelineItem
+                            key={index}
+                            style={{ color: '#317481' }}
+                            dateComponent={(
+                                <TimelineDate>{Roadmap.date}</TimelineDate>
+                            )}
+                            bodyContainerStyle={{
+                                background: 'rgba(255,255,255, 0.8)',
+                                padding: '15px',
+                                borderRadius: '8px',
+                                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+                            }}
+                            animate={ false}
+                            >
+                            <TimelineSubtitle>{Roadmap.subtitle}</TimelineSubtitle>
+                            <TimelineDescription>{Roadmap.description}</TimelineDescription>
+                        </TimelineItem>
+                    )
+                })}
+                </Timeline>
+                
+            </RoadmapContent>
+            
+            </RoadmapContainer>
     )
 }
 

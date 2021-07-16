@@ -123,21 +123,21 @@ const Puchase = ({puchases}) => {
             </TopWave>
             <PuchaseBg></PuchaseBg>
             <PuchaseContent>
-                <Header data-aos="fade-down" data-aos-offset="200" data-aos-delay="500">
+                <Header data-aos="fade-down">
                     Puchase Now
                 </Header>
                 <Border data-aos="flip-left"></Border>
-                <Description data-aos="fade-down" data-aos-offset="200" data-aos-delay="500">
+                <Description data-aos="fade-down">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptatum doloremque dolor sequi debitis iste, velit nulla nostrum hic. Repellat molestiae voluptatibus nihil? Laudantium earum praesentium, animi voluptatum autem similique?
                 </Description>
                 <PuchaseRow>
                     <Column1>
-                        <h1 data-aos="fade-up" data-aos-offset="200" data-aos-delay="500">Presale</h1>
+                        <h1 data-aos="fade-up">Presale</h1>
                         
-                        <Subtitle data-aos="fade-right" data-aos-offset="200" data-aos-delay="500">
+                        <Subtitle data-aos="slide-right">
                             Before Pre-Sale
                         </Subtitle>
-                        <ContentList data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" none={false}>
+                        <ContentList data-aos="fade-up" none={false}>
                             <ContentListItem>
                                 Buy BNB
                             </ContentListItem>
@@ -145,11 +145,11 @@ const Puchase = ({puchases}) => {
                                 Wait for the pre-sale to start
                             </ContentListItem>
                         </ContentList>
-                        <Button data-aos="fade-right" data-aos-offset="200" data-aos-delay="500" to="/" primary="true">BUY BNB</Button>
-                        <Subtitle data-aos="fade-left" data-aos-offset="200" data-aos-delay="500">
+                        <Button data-aos="fade-right" to="/" primary="true">BUY BNB</Button>
+                        <Subtitle data-aos="slide-left">
                             During Pre-Sale
                         </Subtitle>
-                        <ContentList data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" none={false}>
+                        <ContentList data-aos="fade-up" none={false}>
                             <ContentListItem>
                                 While the sale is live, press the contribute button and input the amount of BNB
                             </ContentListItem>
@@ -163,17 +163,17 @@ const Puchase = ({puchases}) => {
                                 Max Amount 7 BNB
                             </ContentListItem>
                         </ContentList>
-                        <Subtitle data-aos="fade-left" data-aos-offset="200" data-aos-delay="500">
+                        <Subtitle data-aos="slide-left">
                             After Pre-Sale
                         </Subtitle>
-                        <ContentList data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" none={false}>
+                        <ContentList data-aos="fade-up"none={false}>
                             <ContentListItem>
                                 Token will distribute to your wallet after the pre-sale
                             </ContentListItem>
                         </ContentList>
                     </Column1>
                     <Column2>
-                        <PuchaseWrapper data-aos="fade-up" data-aos-offset="700" data-aos-mirror="true" data-aos-once="false">
+                        <PuchaseWrapper data-aos="fade-up">
                             <Subtitle>Forseti</Subtitle>
                             <Border></Border>
                             

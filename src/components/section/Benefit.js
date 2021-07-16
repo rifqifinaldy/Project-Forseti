@@ -92,8 +92,8 @@ const Benefit = ({benefits, ecosystems}) => {
     useEffect(() => {
         Aos.init({
             duration: 3000,
-            once: false,
-            mirror: true,
+            once: true,
+            mirror: false,
         });
     }, [])
     return (
@@ -124,7 +124,7 @@ const Benefit = ({benefits, ecosystems}) => {
                     <Header data-aos="fade-up">Ecosystem</Header>
                     <Border data-aos="flip-left">
                     </Border>
-                    <Description>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus minima similique, ullam in, praesentium repudiandae reprehenderit a sunt eveniet ab dolorum voluptatibus saepe qui repellat earum sint. Debitis, eos provident.</Description>
+                    <Description data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus minima similique, ullam in, praesentium repudiandae reprehenderit a sunt eveniet ab dolorum voluptatibus saepe qui repellat earum sint. Debitis, eos provident.</Description>
                     <BenefitCards large="true">
                     {ecosystems.map((ecosystem, index) => {
                         return (
