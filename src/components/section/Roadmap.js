@@ -12,7 +12,7 @@ const RoadmapContainer = styled.div`
     color: #fff;
     align-items: center;
     background : #010606;
-    border-bottom: 1px solid #317481;
+    /* border-bottom: 1px solid #317481; */
     @media screen and (max-width: 768px){
         padding-top: 20px;
     }

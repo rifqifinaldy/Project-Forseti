@@ -5,6 +5,11 @@ import "aos/dist/aos.css";
 import styled from "styled-components";
 import MoveStuffAround from '../Ticker';
 
+const RunningTextContainer = styled.div`
+    background-color: rgba(218, 165, 32, 0.7);
+    border-radius: 3%;
+`;
+
 const AboutContainer = styled.div`
     color: #fff;
     align-items: center;
@@ -81,8 +86,13 @@ function About({abouts}) {
         });
     }, [])
     return (
+        <>
+        <RunningTextContainer>
+            <MoveStuffAround />
+            </RunningTextContainer>
         <AboutContainer id="about">
-                <MoveStuffAround />
+            
+                
                     <Header data-aos="fade-up">About Us</Header>
                     <Border data-aos="flip-left"></Border>
                     <DescriptionWrapper>
@@ -110,6 +120,7 @@ function About({abouts}) {
                     })}
                     </DescriptionWrapper>
             </AboutContainer>
+            </>
     )
 }
 

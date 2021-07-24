@@ -3,9 +3,8 @@ import Ticker from 'react-ticker';
 import styled from 'styled-components';
 
 const TickerContainer = styled.h4`
-    color: #fff;
-    opacity : 0.3;
-    text-shadow: 4px 4px 0px #317481;
+    color: #010606;
+    opacity : 0.7;
     mix-blend-mode: screen;
 `
  
