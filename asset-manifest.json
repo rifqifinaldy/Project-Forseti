@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/forseti-web/static/js/main.309a0c02.chunk.js",
-    "main.js.map": "/forseti-web/static/js/main.309a0c02.chunk.js.map",
+    "main.js": "/forseti-web/static/js/main.c41ed56f.chunk.js",
+    "main.js.map": "/forseti-web/static/js/main.c41ed56f.chunk.js.map",
     "runtime-main.js": "/forseti-web/static/js/runtime-main.1ac0882c.js",
     "runtime-main.js.map": "/forseti-web/static/js/runtime-main.1ac0882c.js.map",
     "static/css/2.24b03725.chunk.css": "/forseti-web/static/css/2.24b03725.chunk.css",
@@ -22,13 +22,17 @@
     "static/media/bg-1.198f4fff.jpg": "/forseti-web/static/media/bg-1.198f4fff.jpg",
     "static/media/bg-3.57e8daf4.jpg": "/forseti-web/static/media/bg-3.57e8daf4.jpg",
     "static/media/blockchain3.94be3ec1.svg": "/forseti-web/static/media/blockchain3.94be3ec1.svg",
+    "static/media/bog-tools.4a35debe.png": "/forseti-web/static/media/bog-tools.4a35debe.png",
+    "static/media/coin-gecko.515ed6aa.png": "/forseti-web/static/media/coin-gecko.515ed6aa.png",
+    "static/media/coin-sniper.fb453028.png": "/forseti-web/static/media/coin-sniper.fb453028.png",
+    "static/media/coin-vote.e918d94c.png": "/forseti-web/static/media/coin-vote.e918d94c.png",
     "static/media/grow.cb2e8947.svg": "/forseti-web/static/media/grow.cb2e8947.svg",
     "static/media/humanitymove.c5604433.svg": "/forseti-web/static/media/humanitymove.c5604433.svg",
     "static/media/logo-img.89bdd1ec.png": "/forseti-web/static/media/logo-img.89bdd1ec.png",
     "static/media/logo-non-circle-img.58d6a53e.png": "/forseti-web/static/media/logo-non-circle-img.58d6a53e.png",
     "static/media/logo.4926726c.png": "/forseti-web/static/media/logo.4926726c.png",
+    "static/media/pancake-swap.811299fb.png": "/forseti-web/static/media/pancake-swap.811299fb.png",
     "static/media/partner-illustration.325b3125.svg": "/forseti-web/static/media/partner-illustration.325b3125.svg",
-    "static/media/partners.72f202d5.svg": "/forseti-web/static/media/partners.72f202d5.svg",
     "static/media/rocket.673db702.png": "/forseti-web/static/media/rocket.673db702.png",
     "static/media/shield.90d9042f.svg": "/forseti-web/static/media/shield.90d9042f.svg",
     "static/media/techmove.6f638780.svg": "/forseti-web/static/media/techmove.6f638780.svg"
@@ -37,6 +41,6 @@
     "static/js/runtime-main.1ac0882c.js",
     "static/css/2.24b03725.chunk.css",
     "static/js/2.a87f766d.chunk.js",
-    "static/js/main.309a0c02.chunk.js"
+    "static/js/main.c41ed56f.chunk.js"
   ]
 }
