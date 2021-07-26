@@ -12,7 +12,7 @@ const RoadmapContainer = styled.div`
     color: #fff;
     align-items: center;
     background : #010606;
-    /* border-bottom: 1px solid #317481; */
+    border-bottom: 1px solid #317481;
     @media screen and (max-width: 768px){
         padding-top: 20px;
     }
@@ -53,9 +53,10 @@ const TimelineSubtitle = styled.h3`
     margin-bottom: 20px;
 `;
 
-const TimelineDescription = styled.p`
-    color : #010606;
+const TimelineDescription = styled.div`
+    color : #fff;
     margin-left: 1em;
+    font-size: 18px;
 `;
 
 const RoadmapIllustrationWrapper= styled(motion.div)`
@@ -98,12 +99,13 @@ function Roadmap({Roadmaps}) {
                     return (
                         <TimelineItem
                             key={index}
-                            style={{ color: '#317481' }}
+                            style={{ color: '#317481', fontSize: '21px' }}
                             dateComponent={(
                                 <TimelineDate>{Roadmap.date}</TimelineDate>
                             )}
                             bodyContainerStyle={{
-                                background: 'rgba(255,255,255, 0.8)',
+                                background: 'transparent',
+                                border: 'solid 2px #317481',
                                 padding: '15px',
                                 borderRadius: '8px',
                                 boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',

@@ -44,7 +44,7 @@ const PartnerRow = styled.div`
     display: grid;
     justify-content: center;
     align-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
 
     @media screen and (max-width: 1000px){

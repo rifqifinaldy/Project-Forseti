@@ -43,18 +43,29 @@ const SupplyHeader = styled.h2`
     color: #fff;
     text-align: center;
     font-weight: 500;
+    font-size: 28px;
 `;
 
-const TokenSupply = styled.h2`
+const TotalSupply = styled.span`
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    margin-left: 0.5em;
+`;
+
+const TokenSupply = styled.span`
     color: #DAA520;
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
+    margin-left: 0.5em;
     margin-bottom: 20px;
     transition: 0.2s ease-in;
+    font-size: 32px;
 
     &:hover {
         color : #317481;
-        transform: scale(1.05);
+        /* transform: scale(1.05); */
     }
 `;
 
@@ -143,11 +154,14 @@ const Tokenomics = () => {
                         <Border>
                         </Border>
                         <SupplyHeader data-aos="fade-up">
-                            Total Supply :
-                        </SupplyHeader>
+                            Total Supply : 
+                            <TotalSupply>10.000.000</TotalSupply>
+                        <br /> Symbol :
                         <TokenSupply data-aos="fade-up">
-                            : 10.000.000
+                             SETI
                         </TokenSupply>
+                        </SupplyHeader>
+                        
                         <TokenomicsWrapper data-aos="fade-up">
                             <MoonImg src={Moon}/>
                         </TokenomicsWrapper>       

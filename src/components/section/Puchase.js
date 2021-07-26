@@ -20,6 +20,16 @@ background-image: url(${img});
     }
 `;
 
+const SubtitleCard = styled.h2`
+    font-size: 32px;
+    opacity : 0.6;
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+    color: ${({darkText}) => (darkText ? '#010606' : "#fff")};
+`;
+
 const TopWave = styled.div`
     margin-top: -4px;
     width: 100%;
@@ -35,7 +45,6 @@ const Wave = styled.div`
 `;
 
 const PuchaseBg = styled.div `
-    
     z-index : -3;
     width: 100%;
     height: 100%;
@@ -44,6 +53,18 @@ const PuchaseBg = styled.div `
     border-bottom: 1px solid #fff;
     @media screen and (max-width: 768px){
         border-radius: 0 0 0 0;
+    }
+`;
+
+const YoutubeWrapper = styled.div`
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    margin-bottom: -50px;
+    height: 0;
+    width: 100%;
+    @media screen and (max-width: 768px){
+        margin-bottom: 0;
     }
 `;
 
@@ -108,6 +129,12 @@ const ContentListItem = styled.li`
     margin: 0.5em 0;
 `;
 
+const ContentListItem2 = styled.li`
+    margin: 0.5em 0;
+    font-weight: 500;
+    font-size: 21px;
+`;
+
 const Puchase = ({puchases}) => {
     useEffect(() => {
         Aos.init({
@@ -130,6 +157,18 @@ const Puchase = ({puchases}) => {
                 <Description data-aos="fade-down">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptatum doloremque dolor sequi debitis iste, velit nulla nostrum hic. Repellat molestiae voluptatibus nihil? Laudantium earum praesentium, animi voluptatum autem similique?
                 </Description>
+                <Subtitle>PRESALE</Subtitle>
+                <YoutubeWrapper>
+                <iframe
+                width="100%"
+                height="480"
+                src={`https://www.youtube.com/embed/rokGy0huYEA`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+                />
+                </YoutubeWrapper>
                 <PuchaseRow>
                     <Column1>
                         <h1 data-aos="fade-up">Presale</h1>
@@ -145,7 +184,7 @@ const Puchase = ({puchases}) => {
                                 Wait for the pre-sale to start
                             </ContentListItem>
                         </ContentList>
-                        <Button data-aos="fade-right" to="/" primary="true">BUY BNB</Button>
+                        
                         <Subtitle data-aos="slide-left">
                             During Pre-Sale
                         </Subtitle>
@@ -174,43 +213,41 @@ const Puchase = ({puchases}) => {
                     </Column1>
                     <Column2>
                         <PuchaseWrapper data-aos="fade-up">
-                            <Subtitle>Forseti</Subtitle>
+                            <SubtitleCard>Forseti</SubtitleCard>
                             <Border></Border>
                             
                                 {puchases.map((puchase, index) => {
                                     return (
                                         <ContentListWrapper key={index}>
                                             <ContentList none={true}>
-                                                <ContentListItem>
+                                                <ContentListItem2>
                                                     Price : {puchase.price}
-                                                </ContentListItem>
-                                                <ContentListItem>
+                                                </ContentListItem2>
+                                                <ContentListItem2>
                                                     Price : {puchase.bnb_raised}
-                                                </ContentListItem>
-                                                <ContentListItem>
+                                                </ContentListItem2>
+                                                <ContentListItem2>
                                                     Soft Cap (400 BNB) : {puchase.soft_cap}
-                                                </ContentListItem>
-                                                <ContentListItem>
+                                                </ContentListItem2>
+                                                <ContentListItem2>
                                                     Hard Cap (2000 BNB) : {puchase.hard_cap}
-                                                </ContentListItem>
+                                                </ContentListItem2>
                                             </ContentList>
-                                            <Button to="/" primary="true">Unlock Wallet</Button>
+                                            <Button to="/" primary="true">BUY PRESALE</Button>
                                             <ContentList none={true}>
-                                                <ContentListItem>
+                                                <ContentListItem2>
                                                     For Sale : {puchase.for_sale}
-                                                </ContentListItem>
-                                                <ContentListItem>
+                                                </ContentListItem2>
+                                                <ContentListItem2>
                                                     Max Contribution : {puchase.max_contribution}
-                                                </ContentListItem>
-                                                <ContentListItem>
+                                                </ContentListItem2>
+                                                <ContentListItem2>
                                                     Min Contribution : {puchase.min_contribution}
-                                                </ContentListItem>
+                                                </ContentListItem2>
                                             </ContentList>
                                         </ContentListWrapper>
                                     )
                                 })}
-                                
-                            
                         </PuchaseWrapper>
                     </Column2>
                 </PuchaseRow>

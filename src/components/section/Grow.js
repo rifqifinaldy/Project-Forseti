@@ -8,7 +8,7 @@ const GrowContainer = styled.div`
     color: #fff;
     align-items: center;
     background : ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
-
+    border-bottom: 1px solid #317481;
     @media screen and (max-width: 768px){
         padding-top: 50px;
     }
@@ -24,6 +24,7 @@ const Wave = styled.div`
 
 const GrowDescription = styled.p`
     font-size: 18px;
+    font-weight: 500;
     text-align: center;
 `
 

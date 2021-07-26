@@ -2,7 +2,8 @@ import React, {useState, useRef, useEffect} from 'react'
 import styled, {css} from 'styled-components/macro'
 import {IoArrowForward, IoArrowBack} from 'react-icons/io5';
 import Herologo from '../../images/logo/logo-img.png';
-import IntroBg from '../../images/hero/10.jpg';
+import Video from '../../images/hero/video4.mp4';
+import IntroBg from '../../images/hero/15.gif';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HeroSection = styled.section`
@@ -77,6 +78,16 @@ const HeroImage = styled(motion.img)`
     height: 100vh;
     object-fit: cover;
 `;
+
+export const VideoBg = styled.video`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+`;
+
 const HeroText = styled(motion.h1)`
     position: absolute;
     color: #fff;
@@ -152,14 +163,14 @@ const Forsetilogo = styled(motion.img)`
     width: 200px;
     border: 2px solid transparent;
     border-radius: 50%;
-    box-shadow:   0px 0px 11px 3px #DAA520;
+    box-shadow:   0px 0px 11px 3px #317481;
 `;
 
 const Motto = styled(motion.h2)`
     font-weight: 400;
     text-shadow:
-      0 0 21px #DAA520,
-      0 0 100px #DAA520;
+      0 0 21px #317481,
+      0 0 100px #317481;
 `
 
 const arrowButtons = css`
@@ -326,12 +337,14 @@ function Hero({slides}) {
                                     )
                                 })}
                             </HeroText>
-                            <HeroImage 
+                            <VideoBg autoPlay loop muted src={Video} 
+                            type='video/mp4'/>
+                            {/* <HeroImage 
                             transition={{duration:1}}
                             variants ={slidingAnimation} 
                             initial ="beginSlide" 
                             animate="endSlide"
-                            src={IntroBg} />
+                            src={IntroBg} /> */}
                             <HeroContent >
                                 <Quotes 
                                 transition={{duration:1}}
