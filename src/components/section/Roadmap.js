@@ -55,6 +55,7 @@ const TimelineSubtitle = styled.h3`
 
 const TimelineDescription = styled.p`
     color : #010606;
+    margin-left: 1em;
 `;
 
 const RoadmapIllustrationWrapper= styled(motion.div)`
@@ -109,8 +110,8 @@ function Roadmap({Roadmaps}) {
                             }}
                             animate={ false}
                             >
-                            <TimelineSubtitle>{Roadmap.subtitle}</TimelineSubtitle>
-                            <TimelineDescription>{Roadmap.description}</TimelineDescription>
+                            {/* <TimelineSubtitle>{Roadmap.subtitle}</TimelineSubtitle> */}
+                            <TimelineDescription>{Roadmap.list}</TimelineDescription>
                         </TimelineItem>
                     )
                 })}

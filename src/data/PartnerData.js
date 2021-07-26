@@ -1,18 +1,38 @@
-import CompanyLogo from '../images/partner/company/partners.svg'
+import bogTools from '../images/partner/company/bog-tools.png';
+import coinGecko from '../images/partner/company/coin-gecko.png';
+import coinHunt from '../images/partner/company/coin-hunt.png';
+import coinSniper from '../images/partner/company/coin-sniper.png';
+import coinVote from '../images/partner/company/coin-vote.png';
+import pancakeSwap from '../images/partner/company/pancake-swap.png';
+import pooCoin from '../images/partner/company/poo-coin.png';
+import coinMarketCap from '../images/partner/company/coin-market-cap.png';
 
 export const partnerData = [
     {
-        img: CompanyLogo,
+        img: bogTools,
     },
     {
-        img: CompanyLogo,
+        img: coinGecko,
     },
     {
-        img: CompanyLogo,
+        img: coinHunt,
     },
     {
-        img: CompanyLogo,
+        img: coinSniper,
+    },  
+    {
+        img: coinVote,
     },
+    {
+        img: pancakeSwap,
+    },
+    {
+        img: pooCoin,
+    },
+    {
+        img: coinMarketCap,
+    },
+    
     
 ]
 

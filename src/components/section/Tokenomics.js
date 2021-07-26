@@ -146,7 +146,7 @@ const Tokenomics = () => {
                             Total Supply :
                         </SupplyHeader>
                         <TokenSupply data-aos="fade-up">
-                            : SETI
+                            : 10.000.000
                         </TokenSupply>
                         <TokenomicsWrapper data-aos="fade-up">
                             <MoonImg src={Moon}/>

@@ -66,6 +66,7 @@ const PartnerDescription = styled.p`
 
 const PartnerLogo = styled.img`
     justify-self: center;
+    max-width: 100%;
 `;
 
 const Partner = ({Partners}) => {
@@ -87,7 +88,8 @@ const Partner = ({Partners}) => {
                     <PartnerImg src={PartnerSVG}/>
                 </PartnerImgWrapper>
                 <PartnerDescription data-aos="fade-up">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat suscipit aliquam inventore id possimus similique? Error officia quod exercitationem cumque non delectus dignissimos, consectetur at obcaecati sunt? Perferendis, libero!
+                    FORSETI memiliki tujuan menggunakan teknologi block-chain untuk menghadirkan peluang besar bagi komunitas kami. Tujuan kami adalah menjadi salah satu
+                    dari beberapa komunitas token yang bermartabat. Kami berkomitmen untuk menghadirkan produk nyata, bernilai tinggi dan sustainability kepada komunitas dan partner.
                 </PartnerDescription>
                 <PartnerRow>
                 {Partners.map((Partner,index) => {
