@@ -6,24 +6,15 @@ import shuttle from '../../images/roadmap/astronaut.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import Aos from 'aos';
 import "aos/dist/aos.css";
-import img from "../../images/background/bg-1.jpg";
 
 const RoadmapContainer = styled.div`
     color: #fff;
     align-items: center;
-    background : #010606;
+    background-image: linear-gradient(to bottom, #010606 , #023047, #010606);
     border-bottom: 1px solid #317481;
     @media screen and (max-width: 768px){
         padding-top: 20px;
     }
-`;
-
-const Wave = styled.div`
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 200;
-    line-height: 0;
 `;
 
 const RoadmapContent = styled.div`
@@ -45,12 +36,6 @@ const TimelineDate = styled.h3`
     float : right;
     margin-right: 1em;
     margin-left: 1em;
-`;
-
-const TimelineSubtitle = styled.h3`
-    opacity : 0.7;
-    color: #317481;
-    margin-bottom: 20px;
 `;
 
 const TimelineDescription = styled.div`
@@ -75,9 +60,6 @@ const RoadmapIllustration = styled.img`
 function Roadmap({Roadmaps}) {
     useEffect(() => {
         Aos.init({
-            duration: 3000,
-            once: true,
-            mirror: false,
         });
     }, [])
     return (

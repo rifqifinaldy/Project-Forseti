@@ -79,27 +79,24 @@ const GrowImg = styled.img`
 const Grow = ({Grows}) => {
     useEffect(() => {
         Aos.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
         });
     }, [])
     return (
         <GrowContainer>
             <GrowContent>
-                <Header data-aos="fade-up">
+                <Header data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
                     How We Grow 
                 </Header>
-                <Border data-aos="flip-left"></Border>
+                <Border data-aos="flip-left" data-aos-duration="3000" data-aos-delay="500"></Border>
                 {Grows.map((Growdata, index) => {
                     return (
                     <GrowRow key={index}>
-                        <Column1 data-aos="fade-left">
+                        <Column1 data-aos="fade-left" data-aos-duration="3000" data-aos-delay="500">
                             <GrowDescription>
                                 {Growdata.description}
                             </GrowDescription>
                         </Column1>    
-                        <Column2 data-aos="fade-right">
+                        <Column2 data-aos="fade-right" data-aos-duration="3000" data-aos-delay="500">
                             <GrowImageWrapper>
                                 <GrowImg src={Growdata.img} />
                             </GrowImageWrapper>

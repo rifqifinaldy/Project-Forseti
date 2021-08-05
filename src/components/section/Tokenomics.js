@@ -22,6 +22,7 @@ const TokenomicsContainer = styled.div`
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+    border-bottom: 1px solid #317481;
     z-index : -3;
     width: 100%;
     height: 100%;
@@ -128,9 +129,6 @@ const MoonImg = styled.img`
 const Tokenomics = () => {
     useEffect(() => {
         Aos.init({
-            duration: 3000,
-            once: true,
-            mirror: false,
         });
     }, [])
     return (
@@ -138,7 +136,7 @@ const Tokenomics = () => {
             <TokenomicsContainer lightBg="true" id="tokenomics">
             
                 <TokenomicsContent>
-                        <Header data-aos="fade-up">
+                        <Header data-aos="fade-up" data-aos-duration="3000" data-aos-delay="250">
                             Tokenomics
                         </Header>
                         <ImgWrapper
@@ -150,25 +148,25 @@ const Tokenomics = () => {
                             <RocketImg src={Rocket} alt="Forseti To The Moon"
                             />
                         </ImgWrapper>
-                        <SubHeader data-aos="slide-up">(To The Moon)</SubHeader>
+                        <SubHeader data-aos="slide-up" data-aos-duration="3000" data-aos-delay="250">(To The Moon)</SubHeader>
                         <Border>
                         </Border>
-                        <SupplyHeader data-aos="fade-up">
+                        <SupplyHeader data-aos="fade-up" data-aos-duration="3000" data-aos-delay="250">
                             Total Supply : 
                             <TotalSupply>10.000.000</TotalSupply>
                         <br /> Symbol :
-                        <TokenSupply data-aos="fade-up">
+                        <TokenSupply data-aos="fade-up" data-aos-duration="3000" data-aos-delay="250">
                              SETI
                         </TokenSupply>
                         </SupplyHeader>
                         
-                        <TokenomicsWrapper data-aos="fade-up">
+                        <TokenomicsWrapper data-aos="fade-up" data-aos-duration="3000" data-aos-delay="250">
                             <MoonImg src={Moon}/>
                         </TokenomicsWrapper>       
                 </TokenomicsContent>
-                <Wave>
+                {/* <Wave>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#010606" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-                </Wave>
+                </Wave> */}
             </TokenomicsContainer>
         </>
     );

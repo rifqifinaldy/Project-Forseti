@@ -91,9 +91,6 @@ const BenefitCards =styled.div`
 const Benefit = ({benefits, ecosystems}) => {
     useEffect(() => {
         Aos.init({
-            duration: 3000,
-            once: true,
-            mirror: false,
         });
     }, [])
     return (
@@ -115,7 +112,7 @@ const Benefit = ({benefits, ecosystems}) => {
                     <BenefitCards large="false">
                     {benefits.map((benefits, index) => {
                         return (
-                            <Cards dark={true} scrolling={benefits.animation} large={true} key={index} description={benefits.description} title={benefits.icon}/>
+                            <Cards dark={true} scrolling={benefits.animation} scrollingDuration={1000} large={true} key={index} description={benefits.description} title={benefits.icon}/>
                         )
                     })} 
                     </BenefitCards>

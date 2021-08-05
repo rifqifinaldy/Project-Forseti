@@ -6,10 +6,11 @@ import styled from "styled-components";
 import MoveStuffAround from '../Ticker';
 
 const RunningTextContainer = styled.div`
-    background-color: rgba(218, 165, 32, 0.7);
-    border-radius: 3%;
+    background-image: linear-gradient(to right, #010606 , #023047);
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
 `;
-
 const AboutContainer = styled.div`
     color: #fff;
     align-items: center;
@@ -80,37 +81,32 @@ const Img = styled.img`
 function About({abouts}) {
     useEffect(() => {
         Aos.init({
-            duration: 2000,
-            once: false,
-            mirror: true,
         });
     }, [])
     return (
         <>
-        <RunningTextContainer>
-            <MoveStuffAround />
+            <RunningTextContainer>
+                <MoveStuffAround />
             </RunningTextContainer>
         <AboutContainer id="about">
-            
-                
-                    <Header data-aos="fade-up">About Us</Header>
-                    <Border data-aos="flip-left"></Border>
+                    <Header data-aos="fade-up"  data-aos-duration="3000">About Us</Header>
+                    <Border data-aos="flip-left" data-aos-duration="3000" data-aos-delay="250"></Border>
                     <DescriptionWrapper>
                     {abouts.map((about,index) => {
                         return (
                         <DescriptionRow key={index} imgStart={about.imgStart}>
                                 <Column1 left={about.left}>
                                     <TextWrapper>
-                                        <Subtitle data-aos="slide-up">
+                                        <Subtitle data-aos="slide-up" data-aos-duration="3000">
                                             {about.subtitle}
                                         </Subtitle>
-                                        <Border data-aos="flip-left"></Border>
-                                        <AboutDescription data-aos="zoom-in-up">
+                                        <Border data-aos="flip-left" data-aos-duration="3000"></Border>
+                                        <AboutDescription data-aos="zoom-in-up" data-aos-duration="3000">
                                             {about.description}
                                         </AboutDescription>
                                     </TextWrapper> 
                                 </Column1>
-                                <Column2 left={about.left} data-aos="zoom-out-down">
+                                <Column2 left={about.left} data-aos="zoom-out-down" data-aos-duration="3000">
                                     <ImgWrap>
                                     <Img src={about.img}/>
                                     </ImgWrap>

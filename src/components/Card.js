@@ -39,7 +39,7 @@ const CardP = styled.p`
 
 export const Cards = ({large, dark, title, description, scrolling, scrollingDuration}) => {
     useEffect(() => {
-        Aos.init({duration: 3000});
+        Aos.init({});
     }, [])
     return (
         <>

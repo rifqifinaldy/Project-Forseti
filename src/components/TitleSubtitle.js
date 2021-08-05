@@ -32,11 +32,11 @@ export const Header = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-    opacity : 0.6;
     margin-bottom: 12px;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 24px;
-    color: ${({darkText}) => (darkText ? '#010606' : "#fff")};
+    color: rgba(255, 255, 255, 0.6);
+    text-align : ${({center}) => (center ? 'left' : 'center')};
 `;
 
 export const Border = styled.div`
@@ -46,9 +46,8 @@ export const Border = styled.div`
     border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #317481;
+    background-image: linear-gradient(180deg, #317481 , #023047);
 `;
-
 
 const TitleSubtitle = () => {
     return (

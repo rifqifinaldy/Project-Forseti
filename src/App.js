@@ -10,7 +10,6 @@ import { benefitData } from './data/BenefitData';
 import Grow from './components/section/Grow';
 import { growData } from './data/GrowData';
 import Tokenomics from './components/section/Tokenomics';
-import { tokenomicsData, tokenomicsToken } from './data/TokenomicsData';
 import Roadmap from './components/section/Roadmap';
 import { roadmapData } from './data/RoadmapData';
 import Puchase from './components/section/Puchase'

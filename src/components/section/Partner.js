@@ -72,29 +72,26 @@ const PartnerLogo = styled.img`
 const Partner = ({Partners}) => {
     useEffect(() => {
         Aos.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
         });
     }, [])
     return (
         <PartnerContainer>
             <PartnerContent>
-                <Header data-aos="fade-up">
+                <Header data-aos="fade-up" data-aos-duration="3000" data-aos-delay="750">
                     Our Partner
                 </Header>
-                <Border data-aos="flip-left"></Border>
-                <PartnerImgWrapper data-aos="fade-left">
+                <Border data-aos="flip-left" data-aos-duration="3000" data-aos-delay="750"></Border>
+                <PartnerImgWrapper data-aos="fade-left" data-aos-duration="3000" data-aos-delay="750">
                     <PartnerImg src={PartnerSVG}/>
                 </PartnerImgWrapper>
-                <PartnerDescription data-aos="fade-up">
+                <PartnerDescription data-aos="fade-up" data-aos-duration="3000" data-aos-delay="750">
                     FORSETI memiliki tujuan menggunakan teknologi block-chain untuk menghadirkan peluang besar bagi komunitas kami. Tujuan kami adalah menjadi salah satu
                     dari beberapa komunitas token yang bermartabat. Kami berkomitmen untuk menghadirkan produk nyata, bernilai tinggi dan sustainability kepada komunitas dan partner.
                 </PartnerDescription>
                 <PartnerRow>
                 {Partners.map((Partner,index) => {
                     return (
-                        <PartnerLogo key={index} src={Partner.img} data-aos="fade-up" />
+                        <PartnerLogo key={index} src={Partner.img} data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000"/>
                     )
                 }
                 )}
