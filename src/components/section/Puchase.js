@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components';
 import {Header, Border, Subtitle } from '../TitleSubtitle';
-import { FaCheckSquare, FaDollarSign, FaShoppingBasket } from "react-icons/fa";
+import { FaCheckSquare, FaShoppingBasket } from "react-icons/fa";
+import { AiFillDollarCircle } from "react-icons/ai";
 import { Button } from '../Button';
 import img from "../../images/background/bg-3.jpg";
 import Aos from 'aos';
@@ -39,13 +40,6 @@ const TopWave = styled.div`
     z-index: 200;
 `;
 
-const FullBorder = styled.div`
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    margin-bottom: 20px;
-`;
-
 const PuchaseContent = styled.div `
     max-width: 1200px;
     padding: 48px 80px;
@@ -63,11 +57,13 @@ const DescriptionWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: ${({center}) => (center ? 'center' : 'flex-start')};
     background-color: rgba(0,0,0, 0.3);
     padding: 25px;
     border-radius: 10px;
-    border: #fff solid 1px;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-image: linear-gradient(90deg, #68b7c7, #fff) 1;
     margin-bottom: 2em;
     ul li {
         color: #fff;
@@ -122,7 +118,7 @@ const PuchaseCard = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     border-radius: 10px;
     align-items: center;
     padding: 15px;
@@ -149,24 +145,23 @@ const ButtonWrapper = styled.div`
 const Important = styled.span`
     font-weight: ${({large}) => (large ? '700' : '500')};
     font-size: ${({large}) => (large ? '24px' : '21px')};
-    color : ${({yellow}) => (yellow ? '#c21e56' : '#DAA520')};
+    color : ${({yellow}) => (yellow ? '#c21e56' : '#68b7c7')};
 `;
 
 const PuchaseDescription = styled.p`
-    font-size: 18px;
+    font-size: 21px;
     text-align: center;
 `;
 
 const YoutubeWrapper = styled.div`
     overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    margin-bottom: -280px;
-    margin-top: 0.5em;
-    height: 100%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     @media screen and (max-width: 768px){
-        margin-bottom: -100px;
     }
 `;
 
@@ -228,17 +223,16 @@ const Puchase = ({puchases}) => {
                             Token will distribute to your wallet after the pre-sale
                         </Items>
                     </ListItem>
-                    <FullBorder></FullBorder>
-                    <DescriptionRow>
-                    <Column1>
-                    <Subtitle data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">How To Buy Presale ?</Subtitle>
+                </DescriptionWrapper>
+                
+                <DescriptionWrapper center={true}>
+                <Subtitle data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">How To Buy Presale ?</Subtitle>
                     <Border></Border>
-                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Tonton Video Dibawah ini untuk tahu bagaimana cara melakukan pembelian pre sale</PuchaseDescription>
+                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Tonton Video Dibawah ini untuk mengetahui bagaimana cara melakukan pembelian pre sale</PuchaseDescription>
                         <YoutubeWrapper>
                             <iframe
-                            width="100%"
+                            width="50%"
                             height="300"
-
                             src={`https://www.youtube.com/embed/rokGy0huYEA`}
                             frameBorder="2"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -246,41 +240,43 @@ const Puchase = ({puchases}) => {
                             title="Embedded youtube"
                             />
                         </YoutubeWrapper>
-                    </Column1>
-                    <Column2>
 
-                        <Subtitle data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true}><FaDollarSign /></Important> Bagaimana Anda Bisa Memaksimalkan Token Forseti Anda ?</Subtitle>
-                        <Border ></Border>
-                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Public Sale Price 1BNB = 2,000,000 SETI</PuchaseDescription>
-                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true}>( 1 SETI = $1 )</Important></PuchaseDescription>
-                        <br />
-                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Listing Pancake Price 1BNB = 1,800,000 SETI</PuchaseDescription>
-                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true}>( 1 SETI = $2 )</Important></PuchaseDescription>
-                        <br />
-                        <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true} yellow={true}>(Kenaikan 200 % setelah publik sale )</Important></PuchaseDescription>
-                        
-                        <PuchaseCard>
-                            <SubtitleCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Pre Sale Launch Pad</SubtitleCard>
-                            <Border></Border>
-                            <DescriptionCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">
-                                <Important>Price : </Important> 1 BUSD = 500000000 FSC
-                            </DescriptionCard>
-                            <DescriptionCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">
-                                <Important>Soft Cap : </Important> 400 BUSD
-                            </DescriptionCard>
-                            <DescriptionCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important>Hard Cap : </Important>  1000 BUSD</DescriptionCard>
-                            <ButtonWrapper data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">
-                                <Button to="/" primary={false}><FaShoppingBasket style={{fontSize: '21px', marginRight: '10px'}} /> BUY PRESALE</Button>
-                            </ButtonWrapper>
-                            <DescriptionCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important>For Sale : </Important> 10000000000</DescriptionCard>
-                            <DescriptionCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important>Max Contribution : </Important> 7 BNB</DescriptionCard>
-                            <DescriptionCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important>Min Contribution : </Important> 0.1 BNB</DescriptionCard>
-                            
-                        </PuchaseCard>
-                    </Column2>
-                </DescriptionRow>
-                </DescriptionWrapper>
+                    <DescriptionRow>
+
+                        <Column1>
+                            <Subtitle data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true}><AiFillDollarCircle /></Important> Bagaimana Anda Bisa Memaksimalkan Token Forseti Anda ?</Subtitle>
+                            <Border ></Border>
+                            <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Public Sale Price 1BNB = 2,000,000 SETI</PuchaseDescription>
+                            <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true}>( 1 SETI = $1 )</Important></PuchaseDescription>
+                            <br />
+                            <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">Listing Pancake Price 1BNB = 1,800,000 SETI</PuchaseDescription>
+                            <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true}>( 1 SETI = $2 )</Important></PuchaseDescription>
+                            <br />
+                            <PuchaseDescription data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450"><Important large={true} yellow={true}>(Kenaikan 200 % setelah publik sale )</Important></PuchaseDescription>
+                        </Column1>
+
+                        <Column2>
+                            <PuchaseCard data-aos="slide-up" data-aos-duration="3000" data-aos-delay="1000" data-aos-offset="450">
+                                <SubtitleCard>Pre Sale Launch Pad</SubtitleCard>
+                                <Border></Border>
+                                <DescriptionCard>
+                                    <Important>Price : </Important> 1 BUSD = 500000000 FSC
+                                </DescriptionCard>
+                                <DescriptionCard>
+                                    <Important>Soft Cap : </Important> 400 BUSD
+                                </DescriptionCard>
+                                <DescriptionCard><Important>Hard Cap : </Important>  1000 BUSD</DescriptionCard>
+                                <ButtonWrapper>
+                                    <Button to="/"><FaShoppingBasket style={{fontSize: '21px', marginRight: '10px'}} /> BUY PRESALE</Button>
+                                </ButtonWrapper>
+                                <DescriptionCard><Important>For Sale : </Important> 10000000000</DescriptionCard>
+                                <DescriptionCard><Important>Max Contribution : </Important> 7 BNB</DescriptionCard>
+                                <DescriptionCard><Important>Min Contribution : </Important> 0.1 BNB</DescriptionCard>
+                            </PuchaseCard>
+                        </Column2>
+                    </DescriptionRow>
                 
+                </DescriptionWrapper>
                 
                 
                 

@@ -8,18 +8,12 @@ const GrowContainer = styled.div`
     color: #fff;
     align-items: center;
     background : ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
-    border-bottom: 1px solid #317481;
+    border-style: solid;
+    border-width: 0 0 2px ;
+    border-image: linear-gradient(90deg, #68b7c7, #317481) 1;
     @media screen and (max-width: 768px){
         padding-top: 50px;
     }
-`;
-
-const Wave = styled.div`
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 200;
-    line-height: 0;
 `;
 
 const GrowDescription = styled.p`
@@ -82,7 +76,7 @@ const Grow = ({Grows}) => {
         });
     }, [])
     return (
-        <GrowContainer>
+        <GrowContainer id="grow">
             <GrowContent>
                 <Header data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
                     How We Grow 
@@ -106,9 +100,6 @@ const Grow = ({Grows}) => {
                 })}
             
             </GrowContent>
-            {/* <Wave>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 64 1440 256"><path fill="#317481" fillOpacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,85.3C840,96,960,160,1080,176C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-            </Wave> */}
             
         </GrowContainer>
     )

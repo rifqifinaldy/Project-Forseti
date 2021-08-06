@@ -1,5 +1,5 @@
-import {IoShieldSharp, IoTrendingUpOutline ,IoBonfire, IoWater, IoRepeatOutline} from 'react-icons/io5';
-import { FaDollarSign, FaFire, FaGift, FaPlus } from "react-icons/fa";
+import {IoShieldSharp, IoTrendingUpOutline,  IoWater, IoRepeatOutline} from 'react-icons/io5';
+import { FaDollarSign, FaGift, FaPlus } from "react-icons/fa";
 import fireMove from '../images/icon/firemove1.png';
 
 export const benefitData = [
@@ -25,7 +25,7 @@ export const benefitData = [
         id:"4",
         animation: "fade-left",
         description: "Auto Burn sebanyak 3% dan 2% hadiah kepada holder dari setiap transaksi penjualan yang terjadi.",
-        icon: <> <img src={fireMove} style={{ width: '80px'}}/> <FaPlus color="#fff" fontSize="24px"/> <FaGift color="#317481" fontSize="72px"/> </>
+        icon: <> <img src={fireMove} alt="Forseti Auto Burn" style={{ width: '80px'}}/> <FaPlus color="#fff" fontSize="24px"/> <FaGift color="#317481" fontSize="72px"/> </>
     },
     {
         id:"5",

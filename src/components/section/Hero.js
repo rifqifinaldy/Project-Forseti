@@ -218,25 +218,6 @@ const slidingAnimation = {
     }
 }
 
-const WordAnimation = {
-    begin : {
-        opacity: 0,
-    },
-    end : {
-        opacity: 1,
-        transition: {
-            duration: 2,
-            delay: 1
-        }
-    },
-    exit: {
-        x:-1000,
-        transition: {
-            duration: 1
-        }
-    }
-}
-
 const logoAnimation = {
     begin : {
         opacity:0, 
@@ -252,9 +233,9 @@ const logoAnimation = {
 }
 
 const sentence = {
-    hidden : {opacity : 0.1},
+    hidden : {opacity : 0.3},
     visible: {
-        opacity: 0.5,
+        opacity: 1,
         transition: {
             delay: 0.5,
             staggerChildren: 0.08,
@@ -263,14 +244,16 @@ const sentence = {
 }
 
 const letter = {
-    hidden: { opacity: 0.5, y:-70 },
+    hidden: { opacity: 0, x:-20, y:-20  },
     visible: {
-        opacity: 0.1,
-        y: 0,
+        opacity: 0.5,
+        rotateY: 360,
+        x:0,
+        y:0,
         transition: {
             repeat: Infinity,
             repeatType : "mirror",
-            duration: 2
+            duration : 2,
         }
     },
 }
@@ -330,6 +313,7 @@ function Hero({slides}) {
                             >
                                 
                                 {companyName.split("").map((char, index) => {
+                                    console.log(companyName.split(""))
                                     return (
                                         <motion.span key={char + "-" + index} variants={letter}>
                                             {char}

@@ -9,7 +9,10 @@ const RunningTextContainer = styled.div`
     background-image: linear-gradient(to right, #010606 , #023047);
     border-style: solid;
     border-width: 1px 0 1px 0;
-    border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+    /* border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+    border-style: solid;
+    border-width: 0 0 2px ; */
+    border-image: linear-gradient(90deg, #68b7c7, #317481) 1;
 `;
 const AboutContainer = styled.div`
     color: #fff;

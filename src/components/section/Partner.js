@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import { Header, Subtitle, Border } from '../TitleSubtitle';
+import { Header, Border } from '../TitleSubtitle';
 import PartnerSVG from '../../images/partner/partner-illustration.svg';
 import Aos from 'aos';
 import "aos/dist/aos.css";
@@ -75,7 +75,7 @@ const Partner = ({Partners}) => {
         });
     }, [])
     return (
-        <PartnerContainer>
+        <PartnerContainer id="partner">
             <PartnerContent>
                 <Header data-aos="fade-up" data-aos-duration="3000" data-aos-delay="750">
                     Our Partner

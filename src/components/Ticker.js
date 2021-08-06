@@ -2,8 +2,6 @@ import React from 'react';
 import Ticker from 'react-ticker';
 import styled from 'styled-components';
 
-
-
 const TickerFont= styled.p`
     color: #317481;
 `

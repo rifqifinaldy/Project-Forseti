@@ -16,7 +16,7 @@ const Nav = styled.nav`
     z-index: 100;
     position: fixed;
     width: 100%;
-    transition: 3s ease-out;
+    transition: 0.5s ease-out;
     @media screen and (max-width: 768px){
         padding: 0;
     }
@@ -73,7 +73,8 @@ const NavMenu = styled.div`
 const NavMenuLinks = styled(LinkS)`
     ${NavLink}
     &.active {
-        border-bottom: 3px solid #fff;
+        border-bottom: 3px solid #68b7c7;
+        color: #68b7c7;
     }
 `
 

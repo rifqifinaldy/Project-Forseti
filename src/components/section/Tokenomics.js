@@ -1,20 +1,20 @@
 import React, {useEffect} from 'react';
-import {Header, Border, Subtitle} from '../TitleSubtitle';
+import {Header, Border} from '../TitleSubtitle';
 import styled from 'styled-components';
 import Rocket from '../../images/tokenomics/rocket.png';
 import Moon from '../../images/tokenomics/Moon.svg';
 import star from '../../images/tokenomics/background.gif';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 
-const Wave = styled.div`
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin-bottom: -4px;
-    z-index: 200;
-`;
+// const Wave = styled.div`
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     margin-bottom: -4px;
+//     z-index: 200;
+// `;
 
 const TokenomicsContainer = styled.div`
     background-image: url(${star});
@@ -22,7 +22,9 @@ const TokenomicsContainer = styled.div`
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-    border-bottom: 1px solid #317481;
+    border-style: solid;
+    border-width: 0 0 2px ;
+    border-image: linear-gradient(90deg, #68b7c7, #317481) 1;
     z-index : -3;
     width: 100%;
     height: 100%;
@@ -45,6 +47,9 @@ const SupplyHeader = styled.h2`
     text-align: center;
     font-weight: 500;
     font-size: 28px;
+    @media screen and (max-width: 572px){
+        font-size: 21px;
+    }
 `;
 
 const TotalSupply = styled.span`
@@ -53,6 +58,12 @@ const TotalSupply = styled.span`
     font-weight: 700;
     font-size: 32px;
     margin-left: 0.5em;
+    @media screen and (max-width: 572px){
+        font-size: 24px;
+    }
+    @media screen and (max-width: 380px){
+        font-size: 21px;
+    }
 `;
 
 const TokenSupply = styled.span`
@@ -68,6 +79,12 @@ const TokenSupply = styled.span`
         color : #317481;
         /* transform: scale(1.05); */
     }
+    @media screen and (max-width: 572px){
+        font-size: 24px;
+    }
+    @media screen and (max-width: 380px){
+        font-size: 21px;
+    }
 `;
 
 const TokenomicsContent = styled.div`
@@ -78,27 +95,27 @@ const TokenomicsContent = styled.div`
     margin-left: auto;
     @media screen and (max-width: 768px){
         width: 100%;
-        padding : 0;
-    }
+        padding : 0 0 0 0;
+        margin-top: 10px;
+    };
 `;
 
 const ImgWrapper = styled(motion.div)`
     max-width: 200px;
     position: absolute;
     @media screen and (max-width: 768px){
-        max-width:150px;
+        max-width:120px;
+        margin-left: 40px;
     }
     @media screen and (max-width: 572px){
-        max-width:100px;
+        max-width:80px; 
     }
     @media screen and (max-width: 420px){
         max-width:50px;
         margin-top: 10vh;
     }
     @media screen and (max-width: 380px){
-        margin-top: 15vh;
-        margin-left : 50px;
-        left: 0;
+        margin-left : 20px;
     }
 `;
 

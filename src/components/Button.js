@@ -8,7 +8,6 @@ export const Button = styled(LinkS)`
     border-radius : 30px;
     opacity: 0.9;
     border: solid 2px #fff;
-    border: ${({primary}) => (primary ? 'solid 2px #fff' : 'solid 2px #fff')};
     min-width: 100px;
     max-width: 200px;
     cursor: pointer;

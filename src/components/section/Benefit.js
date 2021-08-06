@@ -26,10 +26,6 @@ const BenefitContainer = styled.div`
     }
 `;
 
-const SectionBorder = styled.div`
-    margin-top: -4px;
-`
-
 const BenefitBg = styled.div`
     background-image: url(${img});
     background-size: cover;
@@ -40,7 +36,9 @@ const BenefitBg = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    border-bottom: 1px solid #317481;
+    border-style: solid;
+    border-width: 0 0 2px ;
+    border-image: linear-gradient(90deg, #68b7c7, #317481) 1;
     @media screen and (max-width: 768px){
         border-radius: 0 0 0 0;
     }
@@ -117,7 +115,7 @@ const Benefit = ({benefits, ecosystems}) => {
                     })} 
                     </BenefitCards>
                 </BenefitContent>
-                <BenefitContent>
+                <BenefitContent id="ecosystem">
                     <Header data-aos="fade-up">Ecosystem</Header>
                     <Border data-aos="flip-left">
                     </Border>
