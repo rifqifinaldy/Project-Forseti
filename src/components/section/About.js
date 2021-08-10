@@ -89,7 +89,7 @@ function About({abouts}) {
     return (
         <>
             <RunningTextContainer>
-                <MoveStuffAround />
+                <MoveStuffAround/>
             </RunningTextContainer>
         <AboutContainer id="about">
                     <Header data-aos="fade-up"  data-aos-duration="3000">About Us</Header>

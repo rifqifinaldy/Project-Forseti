@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Header,Border } from '../TitleSubtitle';
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import shuttle from '../../images/roadmap/astronaut.png';
-import team from '../../images/roadmap/illustration3.svg';
 import team2 from '../../images/roadmap/illustration6.svg';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
@@ -116,7 +115,7 @@ function Roadmap({Roadmaps}) {
                 </RoadmapIllustrationWrapper>
 
                 <RoadmapIllustrationWrapper2>
-                    <RoadmapIllustration2 src={team}/>
+                    <RoadmapIllustration2 src={team2}/>
                 </RoadmapIllustrationWrapper2>
 
                 <RoadmapIllustrationWrapper3>

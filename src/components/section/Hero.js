@@ -3,7 +3,6 @@ import styled, {css} from 'styled-components/macro'
 import {IoArrowForward, IoArrowBack} from 'react-icons/io5';
 import Herologo from '../../images/logo/logo-img.png';
 import Video from '../../images/hero/video4.mp4';
-import IntroBg from '../../images/hero/15.gif';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HeroSection = styled.section`
@@ -313,7 +312,7 @@ function Hero({slides}) {
                             >
                                 
                                 {companyName.split("").map((char, index) => {
-                                    console.log(companyName.split(""))
+                                    
                                     return (
                                         <motion.span key={char + "-" + index} variants={letter}>
                                             {char}
