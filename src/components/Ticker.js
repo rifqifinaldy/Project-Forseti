@@ -45,7 +45,6 @@ export default class MoveStuffAround extends Component {
         }
         
     render() {
-        console.log(this.state.coins)
         const { coins } = this.state
         return (
             <Marquee duration={500000} height="20px" pauseOnHover={true} reverse={true}>
